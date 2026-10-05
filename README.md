@@ -19,6 +19,7 @@
   <a href="#작동-원칙"><img src="assets/badges/language.svg" alt="기본 출력 언어: 한국어"></a>
   <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="호출 정책: 명시적 호출"></a>
   <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="실행 본문: 영어 287단어"></a>
+  <a href="LICENSE"><img src="assets/badges/license.svg" alt="라이선스: MIT"></a>
 </p>
 
 <p align="center">
@@ -110,6 +111,10 @@ $kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 스킬 파일 구조를 검사하고 위 네 형식의 결과물을 실제로 만들었습니다. 웹의 네 모드 전환, 주제 입력, 빈 입력 처리와 모바일 배치를 확인했습니다. 영상은 전체 파일 디코딩과 브라우저 재생을 확인했습니다.
 
 이 기록은 이번 제작 사례의 확인 범위입니다. 다른 주제의 설명 품질이나 모든 환경의 동작을 평가한 결과는 아닙니다. README는 로컬과 GitHub에서 렌더링해 확인했습니다. [검증 기록](docs/verification.md)
+
+## 라이선스
+
+[MIT 라이선스](LICENSE) · Copyright (c) 2026 Burntgogi
 
 ## 출처와 문서
 
