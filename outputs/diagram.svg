@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+  <title id="title">Kar-plain의 작동 과정</title>
+  <desc id="desc">명시적 호출 후 287단어 공통 지침을 읽고 글, 도해, 웹, 영상 중 요청한 모드를 실행한다. 원문과 결과를 확인한 뒤 전달하며, 필요한 도구를 사용할 수 없으면 부분 결과를 표시한다.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#73827d"/></marker>
+    <style>text{font-family:'Malgun Gothic','맑은 고딕',sans-serif;fill:#233a34} .t{font-size:28px;font-weight:700}.s{font-size:21px;fill:#546a62}.line{fill:none;stroke:#73827d;stroke-width:2.5;marker-end:url(#arrow)} .box{fill:#fffdf8;stroke:#b5c6bd;stroke-width:1.5}</style>
+  </defs>
+  <rect width="1440" height="1060" rx="24" fill="#f4f3ec"/>
+  <text x="60" y="64" class="t">Kar-plain</text><text x="60" y="99" class="s">요청에 맞는 형식을 고르고, 의미를 확인한 뒤 전달합니다.</text>
+  <rect x="440" y="132" width="560" height="98" rx="18" fill="#233f35"/>
+  <text x="720" y="173" text-anchor="middle" style="fill:#fffdf8" class="t">사용자의 명시적 호출</text>
+  <text x="720" y="209" text-anchor="middle" style="fill:#d7e4da;font-size:22px">$kar-plain + 주제·목적</text>
+  <path d="M720 230V270" class="line"/>
+  <rect x="410" y="278" width="620" height="112" rx="18" class="box"/>
+  <text x="720" y="320" text-anchor="middle" class="t">짧은 공통 지침</text>
+  <text x="720" y="353" text-anchor="middle" class="s">한국어 출력 · 의미 보존 · 287단어 본문 전체 읽기</text>
+  <path d="M720 390V420" class="line"/>
+  <rect x="465" y="430" width="510" height="95" rx="40" fill="#e6eee6"/>
+  <text x="720" y="467" text-anchor="middle" class="t">요청한 모드 선택</text>
+  <text x="720" y="500" text-anchor="middle" class="s">생략하면 적합한 형식 하나</text>
+  <path d="M720 525V552H195V586" class="line"/>
+  <path d="M720 525V552H545V586" class="line"/>
+  <path d="M720 525V552H895V586" class="line"/>
+  <path d="M720 525V552H1245V586" class="line"/>
+  <g>
+    <rect x="55" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="195" y="638" text-anchor="middle" class="t">글</text><text x="195" y="674" text-anchor="middle" class="s">정확한 진술을 읽기</text><text x="195" y="709" text-anchor="middle" class="s">한국어 설명문</text>
+    <rect x="405" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="545" y="638" text-anchor="middle" class="t">도해</text><text x="545" y="674" text-anchor="middle" class="s">관계·절차를 보기</text><text x="545" y="709" text-anchor="middle" class="s">Mermaid / SVG</text>
+    <rect x="755" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="895" y="638" text-anchor="middle" class="t">웹</text><text x="895" y="674" text-anchor="middle" class="s">값을 바꾸며 탐색</text><text x="895" y="709" text-anchor="middle" class="s">인터랙티브 HTML</text>
+    <rect x="1105" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="1245" y="638" text-anchor="middle" class="t">영상</text><text x="1245" y="674" text-anchor="middle" class="s">순서대로 따라 보기</text><text x="1245" y="709" text-anchor="middle" class="s">한국어 자막 영상</text>
+  </g>
+  <path d="M195 734V772H720V804" class="line"/>
+  <path d="M545 734V772H720V804" class="line"/>
+  <path d="M895 734V772H720V804" class="line"/>
+  <path d="M1245 734V772H720V804" class="line"/>
+  <rect x="430" y="814" width="580" height="94" rx="18" fill="#e6eee6"/>
+  <text x="720" y="852" text-anchor="middle" class="t">원문 대조 + 모드별 확인</text>
+  <text x="720" y="885" text-anchor="middle" class="s">뜻 · 관계 · 화면과 조작 · 영상 재생과 시간</text>
+  <path d="M570 908V937H370V955" class="line"/><path d="M870 908V937H1090V955" class="line"/>
+  <rect x="170" y="963" width="400" height="55" rx="14" fill="#233f35"/><text x="370" y="998" text-anchor="middle" style="fill:#fffdf8;font-size:23px">완료한 결과물 전달</text>
+  <rect x="860" y="963" width="460" height="55" rx="14" fill="#f0e6cf"/><text x="1090" y="998" text-anchor="middle" style="font-size:22px">도구 사용 불가 → 부분 결과 표시</text>
+</svg>

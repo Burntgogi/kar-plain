@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="720" viewBox="0 0 1440 720" role="img" aria-labelledby="title desc">
+  <title id="title">Kar-plain</title>
+  <desc id="desc">One question branches into prose, diagram, web and video. Choose the format that helps you understand.</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="#dbe3d9" stroke-width="1"/></pattern>
+  </defs>
+  <rect width="1440" height="720" fill="#f5f4ec"/>
+  <rect x="28" y="28" width="1384" height="664" rx="22" fill="url(#grid)" stroke="#c5d3c9" stroke-width="2"/>
+  <rect x="56" y="56" width="1328" height="608" rx="14" fill="#f5f4ec" fill-opacity=".8"/>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <text x="88" y="127" fill="#203e34" font-size="58" font-weight="700" letter-spacing="-2">Kar-plain</text>
+    <text x="1352" y="114" text-anchor="end" fill="#68786d" font-size="22" letter-spacing="2">ONE TOPIC · FOUR FORMATS</text>
+    <path d="M88 157H1352" stroke="#c5d3c9" stroke-width="2"/>
+    <rect x="510" y="197" width="420" height="82" rx="18" fill="#203e34"/>
+    <text x="720" y="249" text-anchor="middle" fill="#f5f4ec" font-size="30" font-weight="600">Your question</text>
+    <g fill="none" stroke="#b37a29" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M720 280V311M219 347V311H1221V347M553 311V347M887 311V347"/>
+    </g>
+    <g fill="#b37a29"><circle cx="219" cy="347" r="6"/><circle cx="553" cy="347" r="6"/><circle cx="887" cy="347" r="6"/><circle cx="1221" cy="347" r="6"/></g>
+    <g fill="#fffef8" stroke="#c5d3c9" stroke-width="2">
+      <rect x="86" y="368" width="266" height="252" rx="20"/>
+      <rect x="420" y="368" width="266" height="252" rx="20"/>
+      <rect x="754" y="368" width="266" height="252" rx="20"/>
+      <rect x="1088" y="368" width="266" height="252" rx="20"/>
+    </g>
+    <g fill="none" stroke="#203e34" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M181 400H238L256 418V484H181ZM238 401V420H255M197 439H238M197 455H238M197 471H222"/>
+      <rect x="531" y="405" width="44" height="28" rx="5"/>
+      <path d="M553 433V450M514 450H592M514 450V461M592 450V461"/>
+      <rect x="493" y="462" width="42" height="26" rx="5"/><rect x="571" y="462" width="42" height="26" rx="5"/>
+      <rect x="839" y="405" width="96" height="81" rx="8"/><path d="M840 425H934M855 442H918M855 469H918"/>
+      <circle cx="883" cy="442" r="6" fill="#fffef8"/><circle cx="904" cy="469" r="6" fill="#fffef8"/>
+      <rect x="1173" y="405" width="96" height="68" rx="8"/><path d="M1173 488H1269"/>
+    </g>
+    <path d="M1210 421L1237 438L1210 454Z" fill="#b37a29"/>
+    <g fill="#203e34" text-anchor="middle" font-size="33" font-weight="700">
+      <text x="219" y="544">Prose</text><text x="553" y="544">Diagram</text><text x="887" y="544">Web</text><text x="1221" y="544">Video</text>
+    </g>
+    <g fill="#68786d" text-anchor="middle" font-size="21">
+      <text x="219" y="580">Read precisely</text><text x="553" y="580">See relationships</text><text x="887" y="580">Change values</text><text x="1221" y="580">Follow a sequence</text>
+    </g>
+    <text x="720" y="661" text-anchor="middle" fill="#68786d" font-size="20">Choose the format that helps you understand.</text>
+  </g>
+</svg>
