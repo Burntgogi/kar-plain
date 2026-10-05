@@ -10,7 +10,7 @@
 <h1 align="center" id="kar-plainchoose-the-format-that-helps-you-understand">Kar-plain<br>Choose the format that helps you understand.</h1>
 <p align="center">
   A Codex skill for explaining topics through prose, diagrams, web pages and videos.<br>
-  Invoke it when needed. Output is Korean by default.
+  Invoke it when needed. Choose Korean or English output.
 </p>
 <p align="center">
   Inspired by <a href="https://x.com/karpathy/status/2105819303471976479?s=20">Andrej Karpathy's original tweet</a>. An unofficial adaptation.
@@ -18,9 +18,9 @@
 <p align="center">
   <a href="docs/README.en.preview.html#installation"><img src="assets/badges/host.svg" alt="Host: Codex"></a>
   <a href="docs/README.en.preview.html#usage"><img src="assets/badges/modes.svg" alt="Explanation formats: 4"></a>
-  <a href="docs/README.en.preview.html#how-it-works"><img src="assets/badges/language.svg" alt="Default output language: Korean"></a>
+  <a href="docs/README.en.preview.html#how-it-works"><img src="assets/badges/language.svg" alt="Output languages: Korean / English"></a>
   <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 287 English words"></a>
+  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 299 English words"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="License: MIT"></a>
 </p>
 <p align="center">
@@ -32,7 +32,7 @@
 <pre><code class="language-text">$kar-plain diagram: Explain how this skill works.
 </code></pre>
 <h2 id="examples">Examples</h2>
-<p>We used this skill to explain the skill itself in four formats. All linked artifacts are in Korean; this English README describes the same outputs.</p>
+<p>We used this skill to explain the skill itself in four formats. The examples below are in English. Separate <a href="README.md#%EC%98%88%EC%8B%9C">Korean examples</a> are also available.</p>
 <table>
 <thead>
 <tr>
@@ -45,40 +45,40 @@
 <tr>
 <td>Prose</td>
 <td>Purpose, invocation and meaning preservation</td>
-<td><a href="outputs/article.txt">Article</a></td>
+<td><a href="outputs/en/article.txt">Article</a></td>
 </tr>
 <tr>
 <td>Diagram</td>
 <td>Invocation, format selection, verification and completion</td>
-<td><a href="outputs/diagram.svg">SVG</a> · <a href="outputs/diagram.mmd">Mermaid source</a></td>
+<td><a href="outputs/en/diagram.svg">SVG</a> · <a href="outputs/en/diagram.mmd">Mermaid source</a></td>
 </tr>
 <tr>
 <td>Web</td>
-<td>The command changes as you select a purpose or edit a topic</td>
-<td><a href="outputs/index.html">Self-contained HTML</a></td>
+<td>The command changes with the purpose, output language, or topic</td>
+<td><a href="outputs/en/index.html">Self-contained HTML</a></td>
 </tr>
 <tr>
 <td>Video</td>
 <td>Formats and completion criteria explained in sequence</td>
-<td><a href="outputs/kar-plain.mp4">60-second MP4</a> · <a href="outputs/kar-plain.srt">SRT captions</a></td>
+<td><a href="outputs/en/kar-plain.mp4">60-second MP4</a> · <a href="outputs/en/kar-plain.srt">SRT captions</a></td>
 </tr>
 </tbody>
 </table>
 <h3 id="read-the-prose">Read the prose</h3>
 <blockquote>
-<p>Kar-plain은 Codex에서 주제를 한국어로 설명할 때 쓰는 스킬이다. 정확한 내용을 읽어야 하면 글을 쓰고, 관계를 봐야 하면 도해를 만든다. 값을 바꾸며 살펴볼 때는 웹을, 순서대로 따라 볼 때는 영상을 선택한다.</p>
+<p>Kar-plain is a Codex skill that explains a topic in Korean or English. Use prose to read precise statements, a diagram to see relationships, a web page to explore by changing inputs, or a video to follow a sequence.</p>
 </blockquote>
-<p>This Korean excerpt describes the choice of prose for precise statements, diagrams for relationships, web pages for experimentation and video for sequential viewing. <a href="outputs/article.txt">Read the full article</a>.</p>
+<p><a href="outputs/en/article.txt">Read the full article</a>.</p>
 <h3 id="inspect-the-diagram">Inspect the diagram</h3>
 <p align="center">
-  <a href="outputs/diagram.svg"><img src="outputs/diagram.svg" alt="Explicit invocation leads through shared instructions, four format choices and verification to a completed artifact or a labeled partial result" width="760"></a>
+  <a href="outputs/en/diagram.svg"><img src="outputs/en/diagram.svg" alt="Explicit invocation leads through language selection, four format choices and verification to a completed artifact or a labeled partial result" width="760"></a>
 </p>
 <h3 id="try-the-web-example">Try the web example</h3>
-<p><a href="outputs/index.html"><img src="assets/web-preview.jpg" alt="Web page showing purpose buttons, a topic field, the selected format and a Codex invocation" /></a></p>
-<p>Download <code>index.html</code> and open it in a browser. Changing the purpose or topic updates the suggested format and command. This example demonstrates format selection. Paste the displayed command into Codex to generate an explanation. The diagram and video are embedded in the HTML file.</p>
+<p><a href="outputs/en/index.html"><img src="assets/web-preview.en.jpg" alt="English web page with purpose buttons, an output language selector, a topic field and a Codex invocation" /></a></p>
+<p>Download <code>index.html</code> and open it in a browser. Changing the purpose, output language, or topic updates the suggested format and command. This example demonstrates format selection. Paste the displayed command into Codex to generate an explanation. The diagram and video are embedded in the HTML file.</p>
 <h3 id="watch-the-video">Watch the video</h3>
-<p><a href="outputs/kar-plain.mp4"><img src="assets/video-preview.gif" alt="Animated excerpt from the 60-second video showing branches into prose, diagram, web and video" /></a></p>
-<p>The image shows an 18-second excerpt. Download and play the <a href="outputs/kar-plain.mp4">full 60-second MP4</a>. The video is 1280×720 at 24fps, with Korean captions burned into the frames. It has no voice narration.</p>
+<p><a href="outputs/en/kar-plain.mp4"><img src="assets/video-preview.en.gif" alt="Animated excerpt from the 60-second video showing branches into prose, diagram, web and video" /></a></p>
+<p>The image shows an 18-second excerpt. Download and play the <a href="outputs/en/kar-plain.mp4">full 60-second MP4</a>. The video is 1280×720 at 24fps, with English captions burned into the frames. It has no voice narration.</p>
 <h2 id="installation">Installation</h2>
 <ol>
 <li>Download and extract the repository.</li>
@@ -115,7 +115,7 @@
 </tr>
 <tr>
 <td>Watch a sequence</td>
-<td><code>$kar-plain video: Create a 60-second video of this process with Korean captions.</code></td>
+<td><code>$kar-plain video: Create a 60-second video of this process with English captions.</code></td>
 </tr>
 <tr>
 <td>Let the skill choose</td>
@@ -123,18 +123,20 @@
 </tr>
 </tbody>
 </table>
-<p>Without a mode, the skill chooses one format suited to the request. Ask for multiple formats when you need them. Request voice narration or English output explicitly.</p>
+<p>Without a mode, the skill chooses one format suited to the request. Ask for multiple formats when you need them. Output language follows an explicit choice, then a known user language preference, then the current request. Quoted source language does not decide it. You can request Korean output in English. Ask for voice narration when you need it.</p>
+<pre><code class="language-text">$kar-plain diagram: Explain this process in Korean.
+</code></pre>
 <h2 id="how-it-works">How it works</h2>
-<p>The core instruction body contains 287 English words. When Codex selects the skill, it reads the full <code>SKILL.md</code> body and applies the requested format. <code>allow_implicit_invocation: false</code> keeps invocation explicit. <a href="https://learn.chatgpt.com/docs/build-skills">Official Codex guide</a>.</p>
-<p>Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. Prose uses ASD-STE100-inspired clarity while keeping Korean natural; it does not claim compliance with the standard.</p>
+<p>The core instruction body contains 299 English words. When Codex selects the skill, it reads the full <code>SKILL.md</code> body and applies the requested format. <code>allow_implicit_invocation: false</code> keeps invocation explicit. <a href="https://learn.chatgpt.com/docs/build-skills">Official Codex guide</a>.</p>
+<p>Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. Prose uses ASD-STE100-inspired clarity while writing naturally in the selected language; it does not claim compliance with the standard.</p>
 <p>Diagrams are checked for relationships and direction, web pages for their primary interaction, and videos for playback and scene timing. A request for a finished video requires a playable file. If required tools are unavailable, the skill identifies the blocker and labels partial results.</p>
 <h2 id="verified-scope">Verified scope</h2>
-<p>We checked the skill structure and produced the four artifacts above. Web checks covered all four format buttons, topic editing, empty input and mobile layout. The video passed full-file decoding and browser playback checks.</p>
+<p>We checked the skill structure and produced separate Korean and English examples in all four formats. Web checks covered all four format buttons, language selection, topic editing, empty input and mobile layout. Both videos passed full-file decoding and browser playback checks.</p>
 <p>These checks cover this production example. They do not establish explanation quality for other topics or compatibility with every environment. The READMEs were rendered and reviewed locally and on GitHub. <a href="docs/verification.md">Verification record</a>.</p>
 <h2 id="license">License</h2>
 <p><a href="LICENSE">MIT License</a> · Copyright (c) 2026 Burntgogi</p>
 <h2 id="sources-and-documents">Sources and documents</h2>
-<p>This skill was inspired by <a href="https://x.com/karpathy/status/2105819303471976479?s=20">Andrej Karpathy's original tweet</a>. It is an unofficial adaptation of his suggestion to help people understand through prose, diagrams, web pages and videos, applied to Korean Codex workflows.</p>
+<p>This skill was inspired by <a href="https://x.com/karpathy/status/2105819303471976479?s=20">Andrej Karpathy's original tweet</a>. It is an unofficial adaptation of his suggestion to help people understand through prose, diagrams, web pages and videos, applied to Korean and English Codex workflows.</p>
 <p>The banner, centered introduction, badges, language switch and example placement draw on <a href="https://github.com/Burntgogi/ai-slop-thresher">AI Slop Thresher</a>. The banner and documents were created for this repository.</p>
 <p><a href="kar-plain/SKILL.md">Skill instructions</a> · <a href="kar-plain/agents/openai.yaml">Invocation settings</a> · <a href="docs/readme-design.md">README design and references</a></p>
 </article></body></html>

@@ -1,0 +1,39 @@
+1
+00:00:00,000 --> 00:00:06,000
+Choose prose, a diagram, a web page, or a video to match what the reader needs to understand.
+
+2
+00:00:06,000 --> 00:00:13,000
+Invoke Kar-plain explicitly when you need it.
+
+3
+00:00:13,000 --> 00:00:20,000
+Choose Korean or English: explicit output choice, known preference, then the current request.
+
+4
+00:00:20,000 --> 00:00:24,000
+Use prose to read precise statements and conditions.
+
+5
+00:00:24,000 --> 00:00:28,000
+Use a diagram to see relationships, steps, branches, and exceptions.
+
+6
+00:00:28,000 --> 00:00:32,000
+Use a web page to explore results by changing inputs.
+
+7
+00:00:32,000 --> 00:00:36,000
+Use a video to follow changes in sequence.
+
+8
+00:00:36,000 --> 00:00:44,000
+Preserve conditions, negation, quantities, obligations, and uncertainty in every format.
+
+9
+00:00:44,000 --> 00:00:52,000
+Compare the source and result. Check interactions, playback, and scene timing.
+
+10
+00:00:52,000 --> 00:01:00,000
+Specify a format, or let the skill choose one. Inspired by Andrej Karpathy's tweet.

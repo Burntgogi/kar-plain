@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1060" viewBox="0 0 1440 1060" role="img" aria-labelledby="title desc">
+  <title id="title">How Kar-plain works</title>
+  <desc id="desc">Explicit invocation leads to shared instructions, Korean or English language selection, a requested format, and verification. Deliver the result or label partial work when required tools are unavailable.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#73827d"/></marker>
+    <style>text{font-family:'Segoe UI',Arial,sans-serif;fill:#233a34} .t{font-size:28px;font-weight:700}.s{font-size:18px;fill:#546a62}.line{fill:none;stroke:#73827d;stroke-width:2.5;marker-end:url(#arrow)} .box{fill:#fffdf8;stroke:#b5c6bd;stroke-width:1.5}</style>
+  </defs>
+  <rect width="1440" height="1060" rx="24" fill="#f4f3ec"/>
+  <text x="60" y="64" class="t">Kar-plain</text><text x="60" y="99" class="s">Choose a language and format, preserve meaning, then verify the result.</text>
+  <rect x="440" y="132" width="560" height="98" rx="18" fill="#233f35"/>
+  <text x="720" y="173" text-anchor="middle" style="fill:#fffdf8" class="t">Explicit user invocation</text>
+  <text x="720" y="209" text-anchor="middle" style="fill:#d7e4da;font-size:20px">$kar-plain + topic and purpose</text>
+  <path d="M720 230V270" class="line"/>
+  <rect x="410" y="278" width="620" height="112" rx="18" class="box"/>
+  <text x="720" y="320" text-anchor="middle" class="t">Shared instructions</text>
+  <text x="720" y="353" text-anchor="middle" class="s">Korean / English · preserve meaning · 299 words</text>
+  <text x="720" y="377" text-anchor="middle" style="font-size:17px;fill:#546a62">Requested language → preference → request language</text>
+  <path d="M720 390V420" class="line"/>
+  <rect x="465" y="430" width="510" height="95" rx="40" fill="#e6eee6"/>
+  <text x="720" y="467" text-anchor="middle" class="t">Choose the requested format</text>
+  <text x="720" y="500" text-anchor="middle" class="s">If omitted, choose one suitable format</text>
+  <path d="M720 525V552H195V586" class="line"/>
+  <path d="M720 525V552H545V586" class="line"/>
+  <path d="M720 525V552H895V586" class="line"/>
+  <path d="M720 525V552H1245V586" class="line"/>
+  <g>
+    <rect x="55" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="195" y="638" text-anchor="middle" class="t">Prose</text><text x="195" y="674" text-anchor="middle" class="s">Read precise statements</text><text x="195" y="709" text-anchor="middle" class="s">Clear prose</text>
+    <rect x="405" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="545" y="638" text-anchor="middle" class="t">Diagram</text><text x="545" y="674" text-anchor="middle" class="s">See relationships and steps</text><text x="545" y="709" text-anchor="middle" class="s">Mermaid / SVG</text>
+    <rect x="755" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="895" y="638" text-anchor="middle" class="t">Web</text><text x="895" y="674" text-anchor="middle" class="s">Explore by changing inputs</text><text x="895" y="709" text-anchor="middle" class="s">Interactive HTML</text>
+    <rect x="1105" y="596" width="280" height="138" rx="18" class="box"/>
+    <text x="1245" y="638" text-anchor="middle" class="t">Video</text><text x="1245" y="674" text-anchor="middle" class="s">Follow a sequence</text><text x="1245" y="709" text-anchor="middle" class="s">Captions in the chosen language</text>
+  </g>
+  <path d="M195 734V772H720V804" class="line"/>
+  <path d="M545 734V772H720V804" class="line"/>
+  <path d="M895 734V772H720V804" class="line"/>
+  <path d="M1245 734V772H720V804" class="line"/>
+  <rect x="430" y="814" width="580" height="94" rx="18" fill="#e6eee6"/>
+  <text x="720" y="852" text-anchor="middle" class="t">Compare the source and verify</text>
+  <text x="720" y="885" text-anchor="middle" class="s">Meaning · direction · interactions · playback and timing</text>
+  <path d="M570 908V937H370V955" class="line"/><path d="M870 908V937H1090V955" class="line"/>
+  <rect x="170" y="963" width="400" height="55" rx="14" fill="#233f35"/><text x="370" y="998" text-anchor="middle" style="fill:#fffdf8;font-size:23px">Deliver the completed artifact</text>
+  <rect x="860" y="963" width="460" height="55" rx="14" fill="#f0e6cf"/><text x="1090" y="998" text-anchor="middle" style="font-size:20px">Tools unavailable → label partial results</text>
+</svg>

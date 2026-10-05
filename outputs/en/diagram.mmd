@@ -1,0 +1,14 @@
+flowchart TB
+    U["Explicit invocation<br/>$kar-plain + topic and purpose"] --> S["Shared instructions<br/>299 words; preserve meaning"]
+    S --> L["Choose Korean or English<br/>Requested language → known preference → request language<br/>Ignore quoted source language"]
+    L --> M{"Choose the requested format<br/>If omitted, choose one suitable format"}
+    M --> P["Prose<br/>Read precise statements"]
+    M --> D["Diagram<br/>See relationships and steps<br/>Mermaid / SVG"]
+    M --> W["Web<br/>Explore by changing inputs<br/>Interactive HTML"]
+    M --> V["Video<br/>Follow a sequence<br/>Captions in the selected language"]
+    P --> Q{"Compare the source and verify the format"}
+    D --> Q
+    W --> Q
+    V --> Q
+    Q -->|"Complete"| R["Deliver the requested artifact"]
+    Q -->|"Required tools unavailable"| F["Explain the blocker and label partial results"]

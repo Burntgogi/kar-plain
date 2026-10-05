@@ -1,0 +1,20 @@
+Kar-plain: choose a format that helps you understand
+
+Kar-plain is a Codex skill that explains a topic in Korean or English. Use prose to read precise statements, a diagram to see relationships, a web page to explore by changing inputs, or a video to follow a sequence. Choose the format according to what the reader needs to learn or decide.
+
+Invoke the skill when you need it. For example, ask "$kar-plain diagram: Show how this skill works." You can specify prose, diagram, web, or video. If you omit the mode, the skill chooses one suitable format. It produces several formats when you request them together.
+
+Output language is independent of format. The skill follows an explicit output-language request first, then a known user language preference, then the language of the current request. It ignores the language of quoted source material. The selected language applies to prose, diagram labels, web interfaces, captions, and requested narration. Proper names and code identifiers stay intact. You can write a Korean request and ask for an English diagram, or write an English request and ask for a Korean video.
+
+Every format preserves the source meaning. Check conditions, negation, quantities, obligations, and uncertainty. In the example "You may apply only within seven days," removing "only" changes the limit. Keep that limit when simplifying the sentence. Distinguish added examples and assumptions from source facts.
+
+Prose uses STE-inspired clarity: direct verbs, consistent terminology, and explanations of necessary technical terms. Write naturally in the selected language without claiming ASD-STE100 compliance. Diagrams need correct relationships, branches, and readable labels. Web pages need a working primary interaction. Videos need playback, correct duration, and scenes that match the explanation.
+
+A finished video request requires a playable video with captions in the selected language. Add narration when requested. A script completes a request for a script; it is a partial result if the user requested a finished video. If required production tools are unavailable, explain the blocker and label the partial deliverables.
+
+The installed skill contains two files: SKILL.md and agents/openai.yaml. The English instruction body contains 299 words. Codex reads the full body when applying the skill. Invocation is explicit, so the explanation workflow can stay outside a long global AGENTS.md file.
+
+This is an unofficial adaptation inspired by Andrej Karpathy's tweet about helping people understand through prose, diagrams, web pages, and videos. The skill applies that idea to Korean and English Codex workflows.
+
+Source: Andrej Karpathy's original tweet
+https://x.com/karpathy/status/2105819303471976479?s=20

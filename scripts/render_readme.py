@@ -85,6 +85,9 @@ for path in (ROOT / "assets").rglob("*.svg"):
     ET.parse(path)
 skill = (ROOT / "kar-plain/SKILL.md").read_text(encoding="utf-8")
 body = skill.split("---", 2)[2].strip()
-assert len(body.split()) == 287
+body_words = len(body.split())
+assert body_words < 350, 'Keep the shared skill concise'
 assert len(list((ROOT / "kar-plain").rglob("*.*"))) == 2
-print(json.dumps({"readmes": results, "links": "PASS", "SVG": "PASS", "skill_body_words": 287}, ensure_ascii=False))
+for name in PREVIEWS:
+    assert str(body_words) in (ROOT / name).read_text(encoding="utf-8"), "README word count is stale"
+print(json.dumps({"readmes": results, "links": "PASS", "SVG": "PASS", "skill_body_words": body_words}, ensure_ascii=False))

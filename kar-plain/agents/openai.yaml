@@ -1,6 +1,6 @@
 interface:
   display_name: "Kar-plain"
-  short_description: "글·도해·웹·영상 중 필요한 형식으로 이해를 돕는 설명을 만듭니다."
-  default_prompt: "$kar-plain 자동: 다음 주제를 한국어로 이해하기 쉽게 설명해 줘."
+  short_description: "Korean/English explainers: prose, diagram, web, or video."
+  default_prompt: "Use $kar-plain to explain the topic below in my preferred language and a suitable format."
 policy:
   allow_implicit_invocation: false
