@@ -109,7 +109,7 @@ Diagrams are checked for relationships and direction, web pages for their primar
 
 We checked the skill structure and produced the four artifacts above. Web checks covered all four format buttons, topic editing, empty input and mobile layout. The video passed full-file decoding and browser playback checks.
 
-These checks cover this production example. They do not establish explanation quality for other topics or compatibility with every environment. The READMEs were rendered and reviewed locally. [Verification record](docs/verification.md).
+These checks cover this production example. They do not establish explanation quality for other topics or compatibility with every environment. The READMEs were rendered and reviewed locally and on GitHub. [Verification record](docs/verification.md).
 
 ## Sources and documents
 
