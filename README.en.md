@@ -18,7 +18,7 @@
   <a href="#usage"><img src="assets/badges/modes.svg" alt="Explanation formats: 4"></a>
   <a href="#how-it-works"><img src="assets/badges/language.svg" alt="Output languages: Korean / English"></a>
   <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 299 English words"></a>
+  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 308 English words"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="License: MIT"></a>
 </p>
 
@@ -37,6 +37,8 @@ $kar-plain diagram: Explain how this skill works.
 ## Examples
 
 We used this skill to explain the skill itself in four formats. The examples below are in English. Separate [Korean examples](README.md#예시) are also available.
+
+The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](kar-plain/SKILL.md) for the current instructions.
 
 | Format | What to inspect | Artifact |
 | --- | --- | --- |
@@ -104,15 +106,17 @@ $kar-plain diagram: Explain this process in Korean.
 
 ## How it works
 
-The core instruction body contains 299 English words. When Codex selects the skill, it reads the full `SKILL.md` body and applies the requested format. `allow_implicit_invocation: false` keeps invocation explicit. [Official Codex guide](https://learn.chatgpt.com/docs/build-skills).
+The core instruction body contains 308 English words. When Codex selects the skill, it reads the full `SKILL.md` body and applies the requested format. `allow_implicit_invocation: false` keeps invocation explicit. [Official Codex guide](https://learn.chatgpt.com/docs/build-skills).
 
-Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. Prose uses ASD-STE100-inspired clarity while writing naturally in the selected language; it does not claim compliance with the standard.
+Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. English procedures and technical descriptions use ASD-STE100 as a writing reference. Korean and other English prose use STE-inspired clarity. Prose explains jargon, preserves claim strength and logical links, and separates procedural actions. It stays natural in the selected language without claiming verified compliance.
 
 Diagrams are checked for relationships and direction, web pages for their primary interaction, and videos for playback and scene timing. A request for a finished video requires a playable file. If required tools are unavailable, the skill identifies the blocker and labels partial results.
 
 ## Verified scope
 
 We checked the skill structure and produced separate Korean and English examples in all four formats. Web checks covered all four format buttons, language selection, topic editing, empty input and mobile layout. Both videos passed full-file decoding and browser playback checks.
+
+We compared 24 outputs in each of two prompt-blinded rounds. The first C was not selected; a revised C2 was compared with the unchanged A/B outputs before choosing the final directive. There are 32 distinct outputs in total. Review used separate agents for source fidelity and linguistic comparison, not a human comprehension study.
 
 These checks cover this production example. They do not establish explanation quality for other topics or compatibility with every environment. The READMEs were rendered and reviewed locally and on GitHub. [Verification record](docs/verification.md).
 

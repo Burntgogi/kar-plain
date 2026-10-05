@@ -18,7 +18,7 @@
   <a href="#사용법"><img src="assets/badges/modes.svg" alt="설명 형식: 4가지"></a>
   <a href="#작동-원칙"><img src="assets/badges/language.svg" alt="출력 언어: 한국어 / 영어"></a>
   <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="호출 정책: 명시적 호출"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="실행 본문: 영어 299단어"></a>
+  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="실행 본문: 영어 308단어"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="라이선스: MIT"></a>
 </p>
 
@@ -37,6 +37,8 @@ $kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 ## 예시
 
 이 스킬을 적용해 스킬 자체를 설명하는 글, 도해, 웹, 영상을 만들었습니다. 아래는 한국어 예시입니다. [영어 예시](README.en.md#examples)도 별도로 제공합니다.
+
+아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](kar-plain/SKILL.md)를 확인하세요.
 
 | 형식 | 살펴볼 내용 | 결과물 |
 | --- | --- | --- |
@@ -104,15 +106,17 @@ $kar-plain 도해: 이 과정을 영어로 설명해 줘.
 
 ## 작동 원칙
 
-핵심 실행 본문은 영어 299단어입니다. Codex는 스킬을 선택하면 `SKILL.md` 본문 전체를 읽고 요청한 형식을 적용합니다. `allow_implicit_invocation: false`로 설정해 명시적으로 호출하도록 했습니다. [Codex 공식 안내](https://learn.chatgpt.com/docs/build-skills)
+핵심 실행 본문은 영어 308단어입니다. Codex는 스킬을 선택하면 `SKILL.md` 본문 전체를 읽고 요청한 형식을 적용합니다. `allow_implicit_invocation: false`로 설정해 명시적으로 호출하도록 했습니다. [Codex 공식 안내](https://learn.chatgpt.com/docs/build-skills)
 
-형식이 달라져도 조건, 부정, 수치, 의무와 가능성의 차이를 보존합니다. 원자료의 사실과 추가한 예시·가정을 구별합니다. 글은 ASD-STE100의 명료성 원칙을 참고해 선택한 언어로 자연스럽게 쓰며, 표준 준수를 주장하지 않습니다.
+형식이 달라져도 조건, 부정, 수치, 의무와 가능성의 차이를 보존합니다. 원자료의 사실과 추가한 예시·가정을 구별합니다. 영어 절차문과 기술 설명에는 ASD-STE100을 작성 기준으로 삼고, 한국어와 그 밖의 영어 글에는 STE-inspired clarity를 적용합니다. 전문용어를 풀고 주장 강도와 논리 연결을 보존하며, 절차의 행동을 분리합니다. 선택한 언어로 자연스럽게 쓰고 검증된 표준 준수를 주장하지 않습니다.
 
 도해는 관계와 방향을, 웹은 주요 조작을, 영상은 재생과 장면 시간을 확인합니다. 완성 영상을 요청한 경우 재생 가능한 파일까지 만들어야 합니다. 필요한 도구를 사용할 수 없으면 막힌 이유와 부분 결과를 밝힙니다.
 
 ## 확인한 범위
 
 스킬 파일 구조를 검사하고 한국어와 영어로 네 형식의 결과물을 각각 만들었습니다. 웹의 네 모드 전환, 출력 언어 선택, 주제 입력, 빈 입력 처리와 모바일 배치를 확인했습니다. 두 영상은 전체 파일 디코딩과 브라우저 재생을 확인했습니다.
+
+글 모드는 수정 전후 24개 결과를 두 차례 익명 비교했습니다. 첫 C는 채택하지 않았으며, 보강한 C2를 기존 A/B와 다시 비교해 최종 지침을 선택했습니다. 총 32개의 서로 다른 결과가 있고 A/B의 이전 결과는 그대로 보존했습니다. 평가는 독립 에이전트의 원문 대조와 언어학적 검토이며 인간 독자의 이해도 시험은 아닙니다.
 
 이 기록은 이번 제작 사례의 확인 범위입니다. 다른 주제의 설명 품질이나 모든 환경의 동작을 평가한 결과는 아닙니다. README는 로컬과 GitHub에서 렌더링해 확인했습니다. [검증 기록](docs/verification.md)
 

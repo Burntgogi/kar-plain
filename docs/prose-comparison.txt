@@ -1,0 +1,734 @@
+Kar-plain 글 모드: 최종 선택과 언어학적 분석
+2026년 10월 5일
+
+최종 선택은 C2다. 단순한 영어/비영어 분기에 장르 선택과 의미 보존을 더한 기본 지침으로 채택한다. 이번 자료에서 가장 균형 잡힌 선택이라는 뜻이며 모든 글에서 우월하다는 결론은 아니다. 두 언어의 절차문에서는 B가 더 좋은 결과였다.
+
+최종 실행 지침
+Prose: Use ASD-STE100 for English procedures and technical descriptions; use STE-inspired clarity otherwise. Explain jargon, keep terms consistent, and preserve claim strength and logical links. Separate procedural actions; write naturally without claiming verified compliance.
+
+글 모드 지시는 A 25단어에서 C2 34단어로 9단어 늘었다. 스킬 전체 본문은 299단어에서 308단어다. 설치 구조는 SKILL.md와 agents/openai.yaml 두 파일을 유지한다. 새 비교 자료는 실행 지침 밖에 둔다.
+
+조건과 실제 선택
+A: 수정 전 STE-inspired clarity. B: ASD-STE100을 직접 지정. 최종 C: 보강한 C2.
+업데이트 절차 영어: B
+업데이트 절차 한국어: B
+환불 조건 영어: A / C2 공동
+환불 조건 한국어: A / C2 공동
+캐시 설명 영어: A / C2 공동
+캐시 설명 한국어: C2
+형식 선택 의견문 영어: C2
+형식 선택 의견문 한국어: C2
+
+단독·공동 선호는 A 3, B 2, C2 6개다. 공동 선호를 각각 세므로 합계는 8개를 넘는다. 단독 선호는 A 0, B 2, C2 3개다. 이 수치는 한 익명 검토 에이전트의 사례별 판단이며 독자 이해도나 통계적 우월성을 뜻하지 않는다.
+
+별도 사실 검토자는 각 조건의 76개 원문 사실 중 A와 C2는 76개를 보존했다고 판단했다. B는 75개 보존, 1개 변형으로 판단했고 영어 의견문의 판단 근거 단정과 한국어 의견문의 인과관계 추가를 지적했다. 그중 영어 지적은 사실 변형과 추가 해석에 함께 해당하므로 서로 독립적인 오류 두 개로 세지 않는다. 체크리스트가 모든 뉘앙스를 포착한다는 뜻도 아니다.
+
+언어학적 분석
+
+1. 의미와 주장 강도
+짧은 문장보다 먼저 보아야 할 것은 부정의 범위, 조건, 가능성과 의무의 강도다. 원문의 개인적 선호가 측정된 학습 효과는 아니라는 말은 그 선호가 측정에 근거하지 않았다는 말과 다르다. B와 첫 C1의 영어 의견문에는 not based on이 있어 저자가 무엇에 근거했는지까지 단정했다. C2는 개인적 판단과 측정된 효과의 증거를 구별해 그 추가 단정을 피했다. 한국어의 환불한다도 환불이 가능하다와 강도가 다르다. C1의 가능 표현은 약점이었고 C2는 환불합니다를 유지했다.
+
+2. 절차의 행동 단위와 담화 구조
+B는 두 언어에서 업데이트 전의 행동, 실패 조건, 업데이트 후의 조건부 행동을 분리해 가장 선호됐다. C2도 행동을 나눴지만 실패 시 금지와 업데이트 후 가져오기를 같은 번호 목록에 넣었다. 이는 모두 차례로 수행할 단계처럼 보이게 할 수 있다. C2의 용어 풀이는 장점이나 이 배치 약점까지 해결하지는 못했다. 문장을 짧게 만드는 것과 독자가 조건 분기를 쉽게 찾게 하는 것은 별개의 성과다.
+
+3. 어휘 접근성과 재지칭
+캐시 키와 캐시 미스를 풀이한 A와 C2는 일반 독자가 설명을 따라가는 데 유리했다. C2 한국어의 찾는 기준이라는 풀이와 캐시 미스의 반복 지칭은 대상과 오류 의미를 확인하기 쉽게 했다. B는 더 압축적이어서 전문용어를 아는 독자에게 효율적일 수 있다. 기술어를 무조건 없애는 대신 첫 사용에서 뜻을 밝히고 같은 뜻에는 같은 용어를 쓰는 편이 좋다. 영어 캐시 키 문장의 구성 진술을 기능 설명으로 바꾼 미세한 차이는 세 문안 모두 완전히 해결하지 못했으므로 사실 체크리스트의 보존 판정만으로 완벽한 의미 동일성을 주장하지 않는다.
+
+4. 연결 표현과 한국어 자연스러움
+한국어 연결어미와 다만, 공지에서는 같은 표현은 조건·대조·주제 전환을 드러낸다. 짧게 끊는 것만으로 그 관계가 자동으로 보존되지는 않는다. C2 의견문은 주제별 문단과 명시적 연결이 안정적이었다. 원문에 없는 인과관계를 때문이라고 넣어서는 안 된다. 영어 원문과 한국어 원문의 인과관계 명시 정도가 다르므로 다른 언어의 정보를 가져와 덧붙이지 않았다. 합니다체와 한다체의 차이는 선호 근거에서 제외했지만 생성 단계에서 높임 표현을 통제하지 않은 한계는 남는다.
+
+5. 길이와 처리 부담
+평균 표시 단위 길이는 영어 A 12.59, B 10.43, C2 11.53단어, 한국어 A 9.16, B 7.37, C2 8.57어절이었다. B가 가장 짧았지만 의견문의 추가 해석과 용어 풀이 부족이 있었다. C2가 모든 분야에서 가장 짧지도, 모든 사례에서 가장 좋은 것도 아니다. 여기서는 명제와 논리 관계를 유지하면서 처음 읽는 독자가 필요한 대상을 찾을 수 있는지를 길이보다 우선했다. 이 계산은 공백 기준의 표면 지표이며 공식 STE 단어 수나 실제 독해 시간을 측정하지 않는다.
+
+왜 언어와 장르를 함께 나누는가
+ASD-STE100은 영어의 통제 어휘와 작성 규칙을 갖춘 기술 문서용 체계다. 한국어에는 영어 승인 단어·품사·의미 규칙을 그대로 적용할 수 없다. 이번 영어 의견문도 표준명을 지정했다고 더 좋은 결과가 되지 않았다. 따라서 영어 절차와 기술 설명은 ASD-STE100을 작성 기준으로 삼고, 일반 영어 글과 한국어는 STE-inspired clarity로 자연스럽게 쓰는 C2를 채택한다. 어느 쪽이든 주장 강도, 전문용어, 논리 연결과 행동 단위는 보존한다. 표준을 작성 기준으로 사용하는 것과 준수를 전수 검증하는 것은 다르며 이 실험은 후자를 수행하지 않았다.
+
+첫 C의 실패도 포함한 과정
+첫 C1은 영어에 ASD-STE100을 장르에 맞게 적용하고 비영어에 STE-inspired clarity를 적용했다. 첫 익명 비교의 단독·공동 선호는 A 6, B 3, C1 3개였고 C1만 선호된 사례는 없었다. 영어 의견문의 주장 강도와 한국어 환불 예외의 약화도 남았다. 이를 보고 장르 선택, 주장 강도 보존과 행동 분리를 보강한 C2를 한 차례만 더 시험했다. C1은 폐기하거나 몰래 고쳐 쓰지 않고 실제 출력과 검토 기록을 보존했다. C2 결과를 본 뒤에는 지침이나 출력 문구를 다시 수정하지 않았다.
+
+해석의 범위
+직접 작성한 가상 원문 네 주제와 두 언어를 사용했다. 최종 A/B/C는 24개 결과를 비교했고 두 라운드 전체에서 서로 다른 결과는 32개다. A/B는 이전 실행 결과를 바이트 단위로 보존했고 각 새 C도 원문당 한 번 생성했다. 각 라운드에는 서로 다른 새 사실 검토 에이전트와 언어학적 검토 에이전트를 사용했다. 검토자는 조건명, 지시문, 작성 메모와 매핑을 보지 않았다. 검토 에이전트는 인간 언어학자가 아니며 같은 모델 계열의 판단이다. 실행 시점과 맥락, 높임 표현을 완전히 통제하지 않았고 여러 번의 표본 생성, 인간 독해 실험, 표준 사전의 단어·품사·의미 검증도 하지 않았다. 다른 장르와 독자에 대한 보편적 우열이나 실제 ASD-STE100 인증 결과로 해석해서는 안 된다.
+
+공식 기준
+https://www.asd-ste100.org/STE_faq.html
+https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf
+https://www.asd-ste100.org/STE_downloads.html
+
+아래에 원문과 A/B/C2 실제 결과를 그대로 싣고, 마지막에 첫 C1의 검토 요약과 실제 결과를 덧붙인다.
+
+
+Kar-plain 글 모드 A/B/C 비교실험
+2026년 10월 5일 · 한·영 4주제 · 24개 결과
+
+A: 수정 전 STE-inspired clarity
+Prose: Apply STE-inspired clarity: direct verbs, clear sentences, consistent terminology, and explained technical terms. Write naturally in the selected language; do not claim ASD-STE100 compliance.
+
+B: ASD-STE100 직접 지시
+Prose: Explain the source in ASD-STE100. Write naturally in the selected language; do not claim ASD-STE100 compliance.
+
+C: 보강한 C2 — 영어 절차·기술 설명은 ASD-STE100, 나머지는 STE-inspired clarity
+Prose: Use ASD-STE100 for English procedures and technical descriptions; use STE-inspired clarity otherwise. Explain jargon, keep terms consistent, and preserve claim strength and logical links. Separate procedural actions; write naturally without claiming verified compliance.
+
+첫 C(C1)를 비교한 뒤 주장 강도 보존과 절차의 행동 분리, 영어 장르 선택을 한 차례 보강했다. C1은 채택하지 않았으며 원문과 실제 결과를 그대로 보존했다. 이 기록의 C는 C2다. C2를 각 원문에서 한 번 생성한 뒤 추가 수정이나 선호 결과를 얻기 위한 재생성을 하지 않았다. 두 라운드에서 A/B 16개와 C1 8개, C2 8개, 총 32개의 서로 다른 결과를 사용했다. 원문은 직접 작성한 가상 사례다.
+
+A/B는 이전 결과를 바이트 단위로 보존했다. C는 같은 공통 지시와 8개 원문을 새 독립 에이전트에 주어 한 번씩 생성했다. 생성 단계에 이전 결과나 예상 답, 사실 체크리스트를 주지 않았다. 동일한 상위 모델 설정을 물려받았으며 별도 모델 지정은 하지 않았다. 공통 개발자 글쓰기 지시는 모든 조건에 적용됐다.
+
+별도 검토자 두 명을 사용했다. 하나는 조건명을 숨기고 24개 글의 원문 사실 228항목을 대조했다. 다른 하나는 원문별 세 결과를 익명으로 비교해 의미, 어휘 접근성, 담화 구조, 말투와 리듬, 경제성을 판단했다. 결과 순서는 고정된 난수 시드로 섞었고, 작성 메모는 검토자에게 보여주지 않았다. 두 검토자는 지시문과 A/B/C 매핑을 보지 않았다. 이는 에이전트 검토이며 인간 독자의 이해도 측정은 아니다.
+
+공통 지시:
+Explain the supplied source for a general adult reader in the requested output language. Preserve meaning, negation, conditions, quantities, obligations, and uncertainty. Distinguish source facts from any added examples or assumptions. Do not add facts or examples. Preserve proper names and code identifiers. Return only the explanation as output; put necessary qualification about the writing standard in separate notes. Choose paragraphs or lists as appropriate. No imposed total length or heading structure.
+
+문장·목록 표시 단위의 평균 길이 (공백 기준)
+English: A 12.59 / B 10.43 / C 11.53
+Korean: A 9.16 / B 7.37 / C 8.57
+목록 번호와 기호는 제외하고, 목록 도입문·항목도 문장과 함께 표시 단위로 센다. 영어는 공백 단어, 한국어는 공백 어절이다. 공식 STE 단어 계산이나 표준 전수 검증은 아니다. 짧은 문장을 곧바로 좋은 글로 점수화하지 않았다.
+
+의미 보존 판정
+A: {"facts": {"preserved": 76}, "unsupported_addition_samples": 0}
+B: {"facts": {"preserved": 75, "altered": 1}, "unsupported_addition_samples": 2}
+C: {"facts": {"preserved": 76}, "unsupported_addition_samples": 0}
+
+원문별 언어학적 선호 (익명 검토 후 매핑)
+update-en: B
+세 문안 모두 의미 보존이 양호하다. Q23은 업데이트 전 행동, 실패 조건, 업데이트 후 조건부 행동을 구조적으로 구별해 절차를 확인하기에 가장 유용하다. Q24는 더 압축된 자연스러운 대안이고, Q05의 용어 풀이는 유용하지만 하나의 번호 목록에 서로 다른 시간 단계와 조건을 함께 넣은 점이 약점이다.
+update-ko: B
+Q08은 Q12와 달리 실제 준비 행동만 번호로 묶고 실패 조건과 업데이트 후 조건을 분리한다. Q18도 충실하고 자연스러운 압축형이며, Q12의 용어 풀이는 장점이다. Q08의 선호는 한다체에 대한 선호가 아니라 절차와 조건의 구조적 구별에 근거한다.
+refund-en: A, C
+Q21과 Q15는 모두 의미를 잘 보존하고, 두 기간의 계산 방식을 필요한 위치에서 구별한다. Q21은 예외의 기간 경계가 더 명시적이고, Q15는 영수증 요건과 처리 시간을 더 잘 묶어 배치하므로 한쪽의 뚜렷한 우위로 판단하지 않았다. Q16도 충실하지만 용어 대조를 생략하고 예외 범위를 지시어로 연결하는 부담이 있다.
+refund-ko: A, C
+Q04는 정책상의 허용과 예외를 직접 표현하고, Q01은 영수증 요건과 처리 시간을 더 잘 구별해 배치한다. 두 문안의 의미 충실성과 접근성은 매우 가깝고 서로 다른 장점이 있어 함께 선호했다. Q09는 충실하지만 기한 풀이와 예외 범위를 여러 단위로 나누면서 연결 부담이 조금 더 생긴다. 합니다체와 한다체의 차이는 선호 근거로 삼지 않았다.
+cache-en: C, A
+Q10과 Q03은 캐시 키의 기능과 미스의 의미를 연결해 설명하면서 원문의 가능성·제한을 보존한다. Q10은 마지막 지시 대상과 정보 구별이 더 명시적이고, Q03은 재사용 설명과 응답 시간 표현이 더 자연스럽고 경제적이어서 함께 선호했다. Q06은 충실하고 압축적이지만 핵심 용어를 이미 아는 독자에게 더 적합하다. 세 문안 모두 키의 두 요소를 제시하되 원문의 구성 진술을 완전히 같은 방식으로 유지하지는 않는다.
+cache-ko: C
+Q11은 Q13과 함께 핵심 용어를 풀어 주면서 모든 한정 조건을 보존한다. 일반 독자에게 더 평이한 찾는 기준이라는 풀이, 미스의 명시적 재지칭, 성능 제한과 백업 구별의 분리를 이유로 Q11을 근소하게 선호했다. Q13의 정확한 용어 풀이와 경제적인 문장 결합도 강점이며, Q20은 기술 용어에 익숙한 독자에게 효율적인 대안이다. 말투의 차이는 판단 근거가 아니다.
+essay-en: C
+Q07은 개인적 선호와 측정된 효과의 증거를 분명히 구별하고, 저자의 판단 근거에 대한 추가 단정 없이 원문의 제한을 유지한다. 세 문단의 주제 묶음과 인과·대조의 명시성도 안정적이다. Q02는 충실하고 더 압축적이지만 주제 전환이 촘촘하고, Q22는 단계별 설명이 선명한 대신 not based on으로 판단의 근거에 관한 해석을 추가한다.
+essay-ko: C
+Q17은 원문의 인식적 제한과 가능성을 보존하면서 주제별 문단, 공지에서는, 다만을 통해 관계를 가장 안정적으로 드러낸다. Q14는 매우 충실한 압축형 대안이다. Q19는 지시 대상이 명시적이지만 기능을 확정적인 선호 이유로 재구성하고 첫 문단을 많이 분절한다. 합니다체와 한다체의 차이로 선호를 결정하지 않았다.
+
+해석과 최종 선택은 별도 decision.txt에 기록하며, 공개 비교 기록에서는 이 보고서 앞에 함께 싣는다.
+
+한계
+각 조건·원문당 한 번만 생성했다. A/B는 과거 실행이고 C는 새 실행이므로 시점과 에이전트 맥락이 완전히 통제된 반복 실험은 아니다. 한국어 높임 표현도 통제하지 않았다. 주제 4개와 두 언어의 결과를 다른 주제나 언어에 일반화할 수 없다. 표준 사전의 승인 단어·품사·의미를 전수 확인하지 않았고 ASD-STE100 준수를 인증하지 않았다. 익명 검토도 같은 모델 계열이므로 사람의 독해 실험이나 통계적 우월성 검정을 대신하지 않는다.
+
+참고한 공식 기준
+https://www.asd-ste100.org/STE_faq.html
+https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf
+https://www.asd-ste100.org/STE_downloads.html
+공식 자료의 작성 규칙·통제 어휘 체계와 AI 문장의 그럴듯함을 검증된 준수와 구별해야 한다는 설명을 기준으로 사용했다. 이전 조사에서 검색된 공식 발췌를 읽었고 직접 PDF 요청은 403을 반환해 전체 사전 검증은 하지 못했다.
+
+수정하지 않은 원문과 전체 결과
+
+========================================================================
+update-en / English
+
+원문
+Before you start an update, export the local settings and save the export outside the application installation folder. Quit the application after the export. If the export fails, do not start the update. After the update, import the export only if the application does not restore the settings automatically. An import replaces the current settings, and you cannot undo it. The test desktop version supports import, but support in the mobile version has not been checked.
+
+A 결과
+Before you start the update, export the local settings and save the exported file outside the application installation folder. Then quit the application. If the export fails, do not start the update.
+
+After the update, import the exported file only if the application does not restore the settings automatically. Importing replaces the current settings, and you cannot undo that replacement.
+
+The test desktop version supports import. Support in the mobile version has not been checked.
+
+분리된 작성 메모: Uses STE-inspired clarity without claiming ASD-STE100 compliance.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+B 결과
+Before you start the update, do these steps:
+
+1. Export the local settings.
+2. Save the exported file outside the application installation folder.
+3. Quit the application after the export.
+
+If the export fails, do not start the update.
+
+After the update, import the saved file only if the application does not restore the settings automatically. An import replaces the current settings. You cannot undo this change.
+
+The desktop version used for the test supports import. Support for import in the mobile version has not been checked.
+
+분리된 작성 메모: ASD-STE100 compliance has not been verified.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+C 결과
+1. Before you start the update, export the local settings to a file.
+2. Save that file outside the application installation folder.
+3. After the export, quit the application.
+4. If the export fails, do not start the update.
+5. After the update, import the exported file only if the application does not restore the settings automatically.
+
+An import loads the saved settings and replaces the current settings. You cannot undo the import. The desktop version used in the test supports import. Support in the mobile version has not been checked.
+
+분리된 작성 메모: The English procedure uses ASD-STE100 principles as a writing guide. Compliance has not been verified.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+========================================================================
+update-ko / Korean
+
+원문
+업데이트를 시작하기 전에 로컬 설정을 내보내고, 내보낸 파일을 앱 설치 폴더 밖에 저장해야 한다. 내보내기가 끝나면 앱을 종료한다. 내보내기에 실패하면 업데이트를 시작해서는 안 된다. 업데이트 후 앱이 설정을 자동으로 복원하지 않은 경우에만 내보낸 파일을 가져온다. 가져오기는 현재 설정을 덮어쓰며 되돌릴 수 없다. 시험한 데스크톱 버전은 가져오기를 지원하지만, 모바일 버전의 지원 여부는 확인하지 않았다.
+
+A 결과
+업데이트를 시작하기 전에 로컬 설정을 내보내고, 내보낸 파일을 앱 설치 폴더 밖에 저장해야 합니다. 내보내기가 끝나면 앱을 종료합니다. 내보내기에 실패하면 업데이트를 시작해서는 안 됩니다.
+
+업데이트 후 앱이 설정을 자동으로 복원하지 않은 경우에만 내보낸 파일을 가져옵니다. 가져오기는 현재 설정을 덮어쓰며, 이 작업은 되돌릴 수 없습니다.
+
+시험한 데스크톱 버전은 가져오기를 지원합니다. 모바일 버전의 지원 여부는 확인하지 않았습니다.
+
+분리된 작성 메모: STE에서 착안한 명료성을 적용했으며, ASD-STE100 준수를 주장하지 않습니다.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+B 결과
+업데이트를 시작하기 전에 다음 순서로 진행해야 한다.
+
+1. 로컬 설정을 내보낸다.
+2. 내보낸 파일을 앱 설치 폴더 밖에 저장한다.
+3. 내보내기가 끝나면 앱을 종료한다.
+
+내보내기에 실패하면 업데이트를 시작해서는 안 된다.
+
+업데이트 후 앱이 설정을 자동으로 복원하지 않은 경우에만 저장한 파일을 가져온다. 가져오기는 현재 설정을 덮어쓴다. 이 변경은 되돌릴 수 없다.
+
+시험한 데스크톱 버전은 가져오기를 지원한다. 모바일 버전의 가져오기 지원 여부는 확인하지 않았다.
+
+분리된 작성 메모: 한국어 출력이며, ASD-STE100 준수를 주장하지 않는다.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+C 결과
+1. 업데이트를 시작하기 전에 로컬 설정을 파일로 내보내세요.
+2. 내보낸 파일을 앱 설치 폴더 밖에 저장하세요.
+3. 내보내기가 끝나면 앱을 종료하세요.
+4. 내보내기에 실패하면 업데이트를 시작해서는 안 됩니다.
+5. 업데이트 후 앱이 설정을 자동으로 복원하지 않은 경우에만 내보낸 파일을 가져오세요.
+
+가져오기는 파일에 저장된 설정으로 현재 설정을 덮어쓰며, 되돌릴 수 없습니다. 시험한 데스크톱 버전은 가져오기를 지원합니다. 모바일 버전의 지원 여부는 확인하지 않았습니다.
+
+분리된 작성 메모: STE의 명료성 원칙을 참고했습니다. ASD-STE100 준수 여부는 검증하지 않았습니다.
+별도 사실 검토: The procedure retains the required preparation, failure prohibition, conditional import, irreversible replacement, and tested-desktop versus unchecked-mobile distinction.
+
+========================================================================
+refund-en / English
+
+원문
+A fictional service permits a standard refund only if the request arrives within seven calendar days after payment and the customer has not exported a file. Cancelling the subscription stops the next renewal; it does not automatically refund a payment. If the team confirms a duplicate charge, it refunds that duplicate charge even after seven days or after a file export. The team usually decides within three business days, but that time is not guaranteed. A receipt is required for both standard and duplicate-charge requests.
+
+A 결과
+This fictional service allows a standard refund only when both conditions are met:
+
+- The refund request arrives within seven calendar days after payment. These are calendar days, not business days.
+- The customer has not exported a file.
+
+Cancelling the subscription stops the next renewal. It does not automatically refund a payment.
+
+If the team confirms a duplicate charge, it refunds that duplicate charge even if more than seven days have passed or the customer has exported a file.
+
+The team usually decides within three business days, but it does not guarantee that time. A receipt is required for both standard refund requests and duplicate-charge refund requests.
+
+분리된 작성 메모: Uses STE-inspired clarity without claiming ASD-STE100 compliance.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+B 결과
+This fictional service permits a standard refund only when both conditions are met:
+
+- The request arrives within seven calendar days after payment.
+- The customer has not exported a file.
+
+Cancelling the subscription stops the next renewal. It does not automatically refund a payment.
+
+If the team confirms a duplicate charge, it refunds that duplicate charge. This rule also applies after seven days or after a file export.
+
+The team usually decides within three business days. This time is not guaranteed. Both standard refund requests and duplicate-charge refund requests require a receipt.
+
+분리된 작성 메모: ASD-STE100 compliance has not been verified.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+C 결과
+This fictional service permits a standard refund only when both conditions are met:
+
+- The request arrives within seven calendar days after payment. These are calendar days, not business days.
+- The customer has not exported a file.
+
+Cancelling the subscription stops the next renewal. It does not automatically refund a payment.
+
+If the team confirms a duplicate charge, it refunds that duplicate charge even if seven days have passed or the customer has exported a file. A receipt is required for both a standard refund request and a duplicate-charge refund request.
+
+The team usually decides within three business days. It does not guarantee that time.
+
+분리된 작성 메모: The explanation uses STE-inspired clarity. ASD-STE100 compliance has not been verified.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+========================================================================
+refund-ko / Korean
+
+원문
+가상의 서비스는 결제 후 7일 이내에 요청이 도착하고 고객이 파일을 내보낸 적이 없는 경우에만 일반 환불을 허용한다. 여기서 7일은 영업일이 아닌 달력 날짜 기준이다. 구독 취소는 다음 갱신을 중단할 뿐 결제금을 자동으로 환불하지 않는다. 담당팀이 중복 결제를 확인하면 7일이 지났거나 파일을 내보냈어도 중복 결제분을 환불한다. 담당팀은 보통 3영업일 이내에 결정하지만 이 기간을 보장하지 않는다. 일반 환불과 중복 결제 환불 모두 영수증이 필요하다.
+
+A 결과
+이 가상의 서비스는 다음 두 조건을 모두 충족한 경우에만 일반 환불을 허용합니다.
+
+- 결제 후 7일 이내에 환불 요청이 도착해야 합니다. 7일은 영업일이 아닌 달력 날짜 기준입니다.
+- 고객이 파일을 내보낸 적이 없어야 합니다.
+
+구독을 취소하면 다음 갱신이 중단됩니다. 결제금이 자동으로 환불되지는 않습니다.
+
+담당팀이 중복 결제를 확인하면 7일이 지났거나 고객이 파일을 내보냈어도 중복 결제분을 환불합니다.
+
+담당팀은 보통 3영업일 이내에 결정하지만, 이 기간을 보장하지 않습니다. 일반 환불과 중복 결제 환불 모두 영수증이 필요합니다.
+
+분리된 작성 메모: STE에서 착안한 명료성을 적용했으며, ASD-STE100 준수를 주장하지 않습니다.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+B 결과
+이 가상의 서비스는 다음 두 조건을 모두 충족할 때만 일반 환불을 허용한다.
+
+- 결제 후 7일 이내에 요청이 도착해야 한다.
+- 고객이 파일을 내보낸 적이 없어야 한다.
+
+7일은 영업일이 아니라 달력 날짜로 센다.
+
+구독을 취소하면 다음 갱신이 중단된다. 결제금이 자동으로 환불되지는 않는다.
+
+담당팀이 중복 결제를 확인하면 중복 결제분을 환불한다. 7일이 지났거나 파일을 내보낸 경우에도 이 규칙이 적용된다.
+
+담당팀은 보통 3영업일 이내에 결정한다. 하지만 이 기간을 보장하지는 않는다. 일반 환불 요청과 중복 결제 환불 요청 모두 영수증이 필요하다.
+
+분리된 작성 메모: 한국어 출력이며, ASD-STE100 준수를 주장하지 않는다.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+C 결과
+이 가상의 서비스에서 일반 환불을 받으려면 다음 두 조건을 모두 충족해야 합니다.
+
+- 결제 후 7일 이내에 환불 요청이 도착해야 합니다. 7일은 영업일이 아닌 달력 날짜 기준입니다.
+- 고객이 파일을 내보낸 적이 없어야 합니다.
+
+구독을 취소하면 다음 갱신이 중단됩니다. 결제금이 자동으로 환불되는 것은 아닙니다.
+
+담당팀이 중복 결제를 확인하면 7일이 지났거나 파일을 내보냈어도 중복 결제분을 환불합니다. 일반 환불과 중복 결제 환불 모두 영수증이 필요합니다.
+
+담당팀은 보통 3영업일 이내에 결정하지만, 이 기간을 보장하지는 않습니다.
+
+분리된 작성 메모: STE의 명료성 원칙을 참고했습니다. ASD-STE100 준수 여부는 검증하지 않았습니다.
+별도 사실 검토: The refund conditions, receipt requirement, duplicate-charge exception, cancellation effect, and unguaranteed decision period retain their source scope and strength.
+
+========================================================================
+cache-en / English
+
+원문
+A cache stores a previously computed result so that the application can avoid doing the same computation again. In this example, the cache key consists of the document ID and its version. A change to the document version causes a cache miss; it does not mean that the original document was deleted. A cached result can be outdated if the server version has not synchronized. A five-minute expiration setting can reduce the time that an outdated result remains available. It does not guarantee a five-minute upper limit if the system clocks differ. The cache can improve response time for repeated requests for the same version, but it does not improve every request. A cache is not a backup.
+
+A 결과
+A cache stores a result that the application has already computed. The application can then use that result to avoid repeating the same computation.
+
+In this example, the cache key identifies the stored result using the document ID and its version. If the document version changes, the cache does not find a result for that version. This is a cache miss. It does not mean that the original document was deleted.
+
+A cached result can be outdated if the server version has not synchronized. Setting the result to expire after five minutes can reduce how long an outdated result remains available. If the system clocks differ, this setting does not guarantee that the result will remain available for no more than five minutes.
+
+The cache can reduce response time for repeated requests for the same version. It does not improve every request, and it is not a backup.
+
+분리된 작성 메모: Uses STE-inspired clarity without claiming ASD-STE100 compliance.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+B 결과
+A cache stores a result that the application has already computed. The application can then avoid doing the same computation again.
+
+In this example, the cache key contains the document ID and the document version. If the document version changes, a cache miss occurs. This cache miss does not mean that the original document was deleted.
+
+The stored result can be out of date if the server version has not synchronized. An expiration time of five minutes can reduce how long an outdated result remains available. If the system clocks differ, this setting does not guarantee a maximum time of five minutes.
+
+A cache can reduce the response time for repeated requests for the same document version. It does not improve the response time for every request. A cache is not a backup.
+
+분리된 작성 메모: ASD-STE100 compliance has not been verified.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+C 결과
+A cache stores a result that the application has already computed. The application can use the stored result to avoid the same computation again.
+
+In this example, the cache key identifies the stored result by its document ID and version. If the document version changes, the application does not find a cached result for that version. This is a cache miss. It does not mean that the original document was deleted.
+
+A cached result can be outdated if the server version has not synchronized. A five-minute expiration setting can reduce the time that an outdated result stays available. If the system clocks differ, this setting does not guarantee that the result stays available for no more than five minutes.
+
+The cache can improve response time for repeated requests for the same version. It does not improve every request. A cache is not a backup.
+
+분리된 작성 메모: The English technical description uses ASD-STE100 principles as a writing guide. Compliance has not been verified.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+========================================================================
+cache-ko / Korean
+
+원문
+캐시는 이미 계산한 결과를 저장해 같은 계산을 다시 하지 않도록 돕는다. 이 예시에서 캐시 키는 문서 ID와 버전으로 구성된다. 문서 버전이 바뀌면 캐시 미스가 발생하지만, 원본 문서가 삭제됐다는 뜻은 아니다. 서버의 버전 정보가 아직 동기화되지 않으면 저장한 결과가 오래된 것일 수 있다. 만료 시간을 5분으로 설정하면 오래된 결과가 남는 시간을 줄일 수 있다. 다만 시스템 시계가 서로 다르면 5분이라는 상한을 보장하지 못한다. 같은 버전의 반복 요청에서는 응답 시간이 줄어들 수 있지만 모든 요청이 빨라지는 것은 아니다. 캐시는 백업이 아니다.
+
+A 결과
+캐시는 이미 계산한 결과를 저장합니다. 저장한 결과를 사용하면 같은 계산을 다시 하지 않을 수 있습니다.
+
+이 예시에서 캐시 키는 저장한 결과를 식별하는 값이며, 문서 ID와 버전으로 구성됩니다. 문서 버전이 바뀌면 해당 버전의 결과를 캐시에서 찾지 못하는 캐시 미스가 발생합니다. 이는 원본 문서가 삭제됐다는 뜻은 아닙니다.
+
+서버의 버전 정보가 아직 동기화되지 않았다면 캐시에 저장한 결과가 오래된 것일 수 있습니다. 만료 시간을 5분으로 설정하면 오래된 결과가 남는 시간을 줄일 수 있습니다. 다만 시스템 시계가 서로 다르면 결과가 남는 시간이 최대 5분이라고 보장할 수 없습니다.
+
+같은 버전을 반복해서 요청할 때는 캐시가 응답 시간을 줄일 수 있습니다. 모든 요청이 빨라지는 것은 아니며, 캐시는 백업이 아닙니다.
+
+분리된 작성 메모: STE에서 착안한 명료성을 적용했으며, ASD-STE100 준수를 주장하지 않습니다.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+B 결과
+캐시는 이미 계산한 결과를 저장한다. 앱은 이 결과를 사용해 같은 계산을 다시 하지 않을 수 있다.
+
+이 예시에서 캐시 키는 문서 ID와 문서 버전으로 구성된다. 문서 버전이 바뀌면 캐시 미스가 발생한다. 이 캐시 미스는 원본 문서가 삭제됐다는 뜻이 아니다.
+
+서버의 버전 정보가 아직 동기화되지 않으면 저장한 결과가 오래된 것일 수 있다. 만료 시간을 5분으로 설정하면 오래된 결과가 남는 시간을 줄일 수 있다. 시스템 시계가 서로 다르면 이 설정은 5분이라는 상한을 보장하지 못한다.
+
+같은 문서 버전을 반복해서 요청하면 캐시가 응답 시간을 줄일 수 있다. 모든 요청의 응답 시간이 줄어드는 것은 아니다. 캐시는 백업이 아니다.
+
+분리된 작성 메모: 한국어 출력이며, ASD-STE100 준수를 주장하지 않는다.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+C 결과
+캐시는 이미 계산한 결과를 저장합니다. 앱은 저장된 결과를 이용해 같은 계산을 다시 하지 않을 수 있습니다.
+
+이 예시에서 캐시 키는 저장한 결과를 찾는 기준이며, 문서 ID와 버전으로 구성됩니다. 문서 버전이 바뀌면 해당 버전의 저장된 결과를 찾지 못하는 캐시 미스가 발생합니다. 캐시 미스가 원본 문서의 삭제를 뜻하는 것은 아닙니다.
+
+서버의 버전 정보가 아직 동기화되지 않으면 저장한 결과가 오래된 것일 수 있습니다. 만료 시간을 5분으로 설정하면 오래된 결과가 남는 시간을 줄일 수 있습니다. 다만 시스템 시계가 서로 다르면 그 결과가 최대 5분까지만 남는다고 보장할 수는 없습니다.
+
+같은 버전을 반복해서 요청할 때는 캐시가 응답 시간을 줄일 수 있습니다. 모든 요청이 빨라지는 것은 아닙니다. 캐시는 백업이 아닙니다.
+
+분리된 작성 메모: STE의 명료성 원칙을 참고했습니다. ASD-STE100 준수 여부는 검증하지 않았습니다.
+별도 사실 검토: The cache explanation retains the version-change causation, synchronization condition, qualified expiration limit, restricted performance benefit, and the distinction from backup.
+
+========================================================================
+essay-en / English
+
+원문
+The author prefers an interactive web page when learning about compound interest because the reader can change the annual interest rate and the duration. This preference is a personal judgement, not a measured learning benefit. The author does not think every explanation needs a web page. For a notice with conditions and exceptions, the author prefers prose that the reader can inspect sentence by sentence. A video can help a reader follow changes over time, but finding a specific detail can be difficult. These opinions do not establish that one format is always better than the others.
+
+A 결과
+The author prefers an interactive web page for learning about compound interest because readers can change the annual interest rate and the duration. This is the author's personal judgement. It is not a measured learning benefit. The author does not think every explanation needs a web page.
+
+For a notice with conditions and exceptions, the author prefers prose that readers can check sentence by sentence. A video can help readers follow changes over time, but it can make a specific detail difficult to find. These opinions do not establish that any one format is always better than the others.
+
+분리된 작성 메모: Uses STE-inspired clarity without claiming ASD-STE100 compliance.
+별도 사실 검토: The output retains the author's preferences as opinions, the possible video benefits and drawbacks, and the absence of a universal format-superiority conclusion.
+
+B 결과
+The author prefers an interactive web page for learning about compound interest. The reason is that readers can change the annual interest rate and the duration. This preference is a personal judgement. It is not based on a measured learning benefit.
+
+The author does not think that every explanation needs a web page. For notices with conditions and exceptions, the author prefers prose that readers can check one sentence at a time.
+
+A video can help readers follow changes over time. But it can be difficult to find a specific detail in a video.
+
+These opinions do not show that one format is always better than the other formats.
+
+분리된 작성 메모: ASD-STE100 compliance has not been verified.
+별도 사실 검토: The operational format descriptions and limits on universal conclusions remain. The qualification about measured benefit changes relation: being a personal judgement rather than a measured benefit becomes not being based on a measured benefit.
+항목 3: altered — The source says "This preference is a personal judgement, not a measured learning benefit." The output says "This preference is a personal judgement. It is not based on a measured learning benefit." The personal-judgement qualification remains, but the output changes a statement about what the preference is into a stronger statement about what it is based on. The source does not rule out measured findings informing a personal preference.
+추가 내용 지적: The phrase "It is not based on a measured learning benefit" newly denies a measured evidentiary basis for the preference. The source phrase "not a measured learning benefit" does not make that denial about its basis.
+
+C 결과
+The author prefers an interactive web page for learning about compound interest because the reader can change the annual interest rate and the duration. This is a personal judgement. It is not evidence of a measured learning benefit.
+
+The author does not think every explanation needs a web page. For a notice with conditions and exceptions, the author prefers prose that the reader can inspect one sentence at a time.
+
+A video can help a reader follow changes over time, but a specific detail can be difficult to find. These opinions do not establish that any one format is always better than the others.
+
+분리된 작성 메모: The explanation uses STE-inspired clarity. ASD-STE100 compliance has not been verified.
+별도 사실 검토: The output retains the author's preferences as opinions, the possible video benefits and drawbacks, and the absence of a universal format-superiority conclusion.
+
+========================================================================
+essay-ko / Korean
+
+원문
+저자는 복리를 배울 때 연이율과 기간을 바꿔 볼 수 있는 인터랙티브 웹을 선호한다. 이는 개인적인 판단이며 학습 효과를 측정한 결과는 아니다. 저자는 모든 설명에 웹이 필요하다고 생각하지 않는다. 조건과 예외가 있는 공지는 문장마다 확인할 수 있는 글을 선호한다. 영상은 시간에 따른 변화를 따라가는 데 도움이 될 수 있지만 특정 세부사항을 다시 찾기 어려울 수 있다. 이러한 의견만으로 어느 형식이 언제나 더 낫다고 결론 내릴 수는 없다.
+
+A 결과
+저자는 복리를 배울 때 연이율과 기간을 바꿔 볼 수 있는 인터랙티브 웹을 선호합니다. 이는 저자의 개인적인 판단이며, 학습 효과를 측정한 결과는 아닙니다. 저자는 모든 설명에 웹이 필요하다고 생각하지 않습니다.
+
+조건과 예외가 있는 공지는 문장마다 확인할 수 있는 글을 선호합니다. 영상은 시간에 따른 변화를 따라가는 데 도움이 될 수 있지만, 특정 세부사항을 다시 찾기 어려울 수 있습니다. 이러한 의견만으로 어느 형식이 언제나 더 낫다고 결론 내릴 수는 없습니다.
+
+분리된 작성 메모: STE에서 착안한 명료성을 적용했으며, ASD-STE100 준수를 주장하지 않습니다.
+별도 사실 검토: The output retains the author's preferences as opinions, the possible video benefits and drawbacks, and the absence of a universal format-superiority conclusion.
+
+B 결과
+저자는 복리를 배울 때 인터랙티브 웹을 선호한다. 독자가 연이율과 기간을 바꿔 볼 수 있기 때문이다. 이 선호는 개인적인 판단이다. 학습 효과를 측정한 결과는 아니다.
+
+저자는 모든 설명에 웹이 필요하다고 생각하지 않는다. 조건과 예외가 있는 공지는 독자가 문장마다 확인할 수 있는 글을 선호한다.
+
+영상은 독자가 시간에 따른 변화를 따라가는 데 도움이 될 수 있다. 하지만 영상에서 특정 세부사항을 다시 찾기 어려울 수 있다.
+
+이러한 의견만으로 어느 형식이 언제나 다른 형식보다 더 낫다고 결론 내릴 수는 없다.
+
+분리된 작성 메모: 한국어 출력이며, ASD-STE100 준수를 주장하지 않는다.
+별도 사실 검토: All listed facts are retained, including the personal-judgement and unmeasured-benefit qualifications. A narrow causal addition attributes the preference to the adjustable rate and duration; that reason is plausible but not explicitly stated in this Korean source.
+추가 내용 지적: The output adds the explicit reason "독자가 연이율과 기간을 바꿔 볼 수 있기 때문이다." The source only says "저자는 복리를 배울 때 연이율과 기간을 바꿔 볼 수 있는 인터랙티브 웹을 선호한다." The source identifies the preferred format and its capabilities, but does not explicitly attribute the preference to those capabilities as its cause. This is a plausible inference made explicit as the author's reason.
+
+C 결과
+저자는 복리를 배울 때 연이율과 기간을 바꿔 볼 수 있는 인터랙티브 웹을 선호합니다. 이는 저자의 개인적인 판단이며, 학습 효과를 측정해서 얻은 결과는 아닙니다.
+
+저자는 모든 설명에 웹이 필요하다고 생각하지 않습니다. 조건과 예외가 있는 공지에서는 문장마다 내용을 확인할 수 있는 글을 선호합니다.
+
+영상은 시간에 따른 변화를 따라가는 데 도움이 될 수 있습니다. 다만 특정 세부사항을 다시 찾기 어려울 수 있습니다. 이러한 의견만으로 어느 형식이 언제나 다른 형식보다 낫다고 결론 내릴 수는 없습니다.
+
+분리된 작성 메모: STE의 명료성 원칙을 참고했습니다. ASD-STE100 준수 여부는 검증하지 않았습니다.
+별도 사실 검토: The output retains the author's preferences as opinions, the possible video benefits and drawbacks, and the absence of a universal format-superiority conclusion.
+
+
+첫 C(C1)의 분석 결과 (투명한 수정 이력)
+{
+  "date": "2026-10-05",
+  "outputs": 24,
+  "source_fact_judgements": 228,
+  "previous_AB_outputs_unchanged": true,
+  "facts_by_variant": {
+    "A": {
+      "facts": {
+        "preserved": 76
+      },
+      "unsupported_addition_samples": 0
+    },
+    "B": {
+      "facts": {
+        "preserved": 75,
+        "uncertain": 1
+      },
+      "unsupported_addition_samples": 2
+    },
+    "C": {
+      "facts": {
+        "preserved": 75,
+        "uncertain": 1
+      },
+      "unsupported_addition_samples": 1
+    }
+  },
+  "surface_metrics": [
+    {
+      "variant": "A",
+      "language": "English",
+      "outputs": 4,
+      "total_characters": 2619,
+      "total_whitespace_units": 430,
+      "total_display_sentences": 34,
+      "weighted_mean_sentence_units": 12.59,
+      "max_sentence_units": 27,
+      "total_list_items": 2,
+      "sentences_above_english_threshold": 1
+    },
+    {
+      "variant": "A",
+      "language": "Korean",
+      "outputs": 4,
+      "total_characters": 1212,
+      "total_whitespace_units": 295,
+      "total_display_sentences": 32,
+      "weighted_mean_sentence_units": 9.16,
+      "max_sentence_units": 17,
+      "total_list_items": 2,
+      "sentences_above_english_threshold": null
+    },
+    {
+      "variant": "B",
+      "language": "English",
+      "outputs": 4,
+      "total_characters": 2540,
+      "total_whitespace_units": 422,
+      "total_display_sentences": 40,
+      "weighted_mean_sentence_units": 10.43,
+      "max_sentence_units": 19,
+      "total_list_items": 5,
+      "sentences_above_english_threshold": 0
+    },
+    {
+      "variant": "B",
+      "language": "Korean",
+      "outputs": 4,
+      "total_characters": 1216,
+      "total_whitespace_units": 307,
+      "total_display_sentences": 41,
+      "weighted_mean_sentence_units": 7.37,
+      "max_sentence_units": 13,
+      "total_list_items": 5,
+      "sentences_above_english_threshold": null
+    },
+    {
+      "variant": "C",
+      "language": "English",
+      "outputs": 4,
+      "total_characters": 2581,
+      "total_whitespace_units": 426,
+      "total_display_sentences": 41,
+      "weighted_mean_sentence_units": 10.34,
+      "max_sentence_units": 19,
+      "total_list_items": 2,
+      "sentences_above_english_threshold": 0
+    },
+    {
+      "variant": "C",
+      "language": "Korean",
+      "outputs": 4,
+      "total_characters": 1252,
+      "total_whitespace_units": 302,
+      "total_display_sentences": 36,
+      "weighted_mean_sentence_units": 8.33,
+      "max_sentence_units": 14,
+      "total_list_items": 2,
+      "sentences_above_english_threshold": null
+    }
+  ],
+  "linguistic_preferences": [
+    {
+      "case_id": "T01",
+      "fixture_id": "update-en",
+      "preferred_variants": [
+        "B"
+      ],
+      "reason": "Q23 provides useful procedural segmentation, explicit file references, and a clear statement of the tested desktop scope while retaining every constraint. Q24 is a close compact alternative and has the clearest undo antecedent. The preference rests on executing and locating the steps, not on shorter sentences by themselves."
+    },
+    {
+      "case_id": "T02",
+      "fixture_id": "update-ko",
+      "preferred_variants": [
+        "B"
+      ],
+      "reason": "Q08 has the strongest action-by-action navigation and explicit mobile-import scope, with no material loss of force or condition scope. Q18 and Q12 remain faithful and fluent prose alternatives. The triplet varies Korean speech level as well as structure, so this preference cannot be attributed to 한다 versus 합니다."
+    },
+    {
+      "case_id": "T03",
+      "fixture_id": "refund-en",
+      "preferred_variants": [
+        "A",
+        "B"
+      ],
+      "reason": "Q21 and Q16 offer comparably sound readings of the policy. Q21 supplies a useful calendar-day contrast and attaches exceptions directly to their rules; Q16 is economical while keeping its backward references clear. Q15 is also faithful, but its more administrative gloss and extra segmentation provide no clear additional benefit."
+    },
+    {
+      "case_id": "T04",
+      "fixture_id": "refund-ko",
+      "preferred_variants": [
+        "A"
+      ],
+      "reason": "Q04 combines faithful force with clearly attached conditions and exceptions. Q09 is a strong alternative, with simpler counting language but more backward references. Q01 is less preferred because its exceptional-refund sentence shifts the source's refund commitment toward mere possibility. 합니다 versus 한다 is not the basis of the decision."
+    },
+    {
+      "case_id": "T05",
+      "fixture_id": "cache-en",
+      "preferred_variants": [
+        "C",
+        "A"
+      ],
+      "reason": "Q10 and Q03 both explain the central cache vocabulary while preserving the source's limits. Q10 has clearer composite-key cohesion and a shorter bound statement; Q03 has more idiomatic opening prose and a concrete explanation of expiration, offset by a difficult negative guarantee sentence. Q06 is faithful but leaves 'cache miss' unexplained. This is a textual tie, not evidence of equal measured comprehension."
+    },
+    {
+      "case_id": "T06",
+      "fixture_id": "cache-ko",
+      "preferred_variants": [
+        "C",
+        "A"
+      ],
+      "reason": "Q11 and Q13 supply necessary cache vocabulary explanations that Q20 lacks. Q11 keeps the full key reference and separates the backup point; Q13 states the time bound in more accessible words. Those tradeoffs support a tie for a general adult audience. The decision does not favor 합니다 over 한다, an uncontrolled register difference in this triplet."
+    },
+    {
+      "case_id": "T07",
+      "fixture_id": "essay-en",
+      "preferred_variants": [
+        "A"
+      ],
+      "reason": "Q02 has the strongest combination of source-level epistemic framing, explicit causal and contrastive links, and fluent economy. Its small causal shading in the video sentence should be acknowledged. Q22 is a close alternative with excellent paragraph-level navigation; Q07 places more of the relationship reconstruction on the reader. The preference is a textual judgment rather than a claim about tested learning outcomes."
+    },
+    {
+      "case_id": "T08",
+      "fixture_id": "essay-ko",
+      "preferred_variants": [
+        "A",
+        "C"
+      ],
+      "reason": "Q14 and Q17 are both faithful and naturally cohesive. Q14 gains economy from ordinary Korean coordination and subject ellipsis; Q17 offers more explicit reference and topical separation with little extra burden. Q19 is still usable, but adds a plausible causal interpretation and more repetition. The tie does not treat Korean speech level or sentence length as evidence of better comprehension."
+    }
+  ],
+  "method": "Frozen historical A/B, new C; separate condition-blinded fact and linguistic review agents. One generation per source and condition.",
+  "limits": [
+    "Eight fixtures per condition, one generation each; no repeated sampling.",
+    "Inherited developer writing instructions apply to both conditions.",
+    "The experiment tests a direct standard-name instruction, not a validated full-standard implementation.",
+    "Only selected measurable structural rules are checked; full dictionary, permitted senses, parts of speech, and technical-term qualification are not validated.",
+    "Agent-based qualitative judgement is not a human reader comprehension study."
+  ]
+}
+
+첫 C(C1)의 수정하지 않은 실제 결과
+
+update-en / English
+Before you start the update, export the local settings. Save the export outside the application installation folder. Then quit the application. If the export fails, do not start the update.
+
+After the update, import the export only if the application does not restore the settings automatically. The import replaces the current settings. You cannot undo it.
+
+The desktop version that was tested supports import. Support for import in the mobile version has not been checked.
+작성 메모: ASD-STE100 was used as a writing guide, adapted to this text. Compliance has not been verified.
+
+update-ko / Korean
+업데이트를 시작하기 전에 로컬 설정을 내보내야 합니다. 내보낸 파일은 앱 설치 폴더 밖에 저장해야 합니다. 내보내기가 끝나면 앱을 종료합니다. 내보내기에 실패하면 업데이트를 시작해서는 안 됩니다.
+
+업데이트 후에는 앱이 설정을 자동으로 복원하지 않은 경우에만 내보낸 파일을 가져옵니다. 가져오기는 현재 설정을 덮어쓰며, 되돌릴 수 없습니다.
+
+시험한 데스크톱 버전은 가져오기를 지원합니다. 모바일 버전이 가져오기를 지원하는지는 확인하지 않았습니다.
+작성 메모: STE의 명료성 원칙을 참고해 작성했습니다. 표준 준수 여부는 검증하지 않았습니다.
+
+refund-en / English
+This fictional service permits a standard refund only if both conditions are met:
+
+- The request arrives within seven calendar days after payment. The period is measured in calendar days, not business days.
+- The customer has not exported a file.
+
+Cancelling the subscription stops the next renewal. It does not automatically refund a payment.
+
+If the team confirms a duplicate charge, it refunds that duplicate charge. This applies even if more than seven days have passed or the customer has exported a file.
+
+The team usually makes a decision within three business days. This time is not guaranteed. A receipt is required for both standard refund requests and duplicate-charge refund requests.
+작성 메모: ASD-STE100 was used as a writing guide, adapted to this text. Compliance has not been verified.
+
+refund-ko / Korean
+이 가상의 서비스는 다음 두 조건을 모두 충족한 경우에만 일반 환불을 허용합니다.
+
+- 결제 후 7일 이내에 환불 요청이 도착해야 합니다. 7일은 영업일이 아닌 달력 날짜를 기준으로 셉니다.
+- 고객이 파일을 내보낸 적이 없어야 합니다.
+
+구독을 취소하면 다음 갱신이 중단됩니다. 결제금이 자동으로 환불되지는 않습니다.
+
+담당팀이 중복 결제를 확인하면 중복 결제분을 환불합니다. 7일이 지났거나 고객이 파일을 내보냈어도 이 환불은 가능합니다.
+
+담당팀은 보통 3영업일 이내에 결정하지만, 이 기간을 보장하지는 않습니다. 일반 환불과 중복 결제 환불 모두 영수증이 필요합니다.
+작성 메모: STE의 명료성 원칙을 참고해 작성했습니다. 표준 준수 여부는 검증하지 않았습니다.
+
+cache-en / English
+A cache stores a result that the application has already computed. This lets the application avoid the same computation again.
+
+In this example, the cache key identifies the stored result by the document ID and its version. If the document version changes, the cache does not have a result for that key. This is called a cache miss. It does not mean that the original document was deleted.
+
+The stored result can be outdated if the server version has not synchronized. A five-minute expiration setting can reduce the time that an outdated result remains available. If the system clocks differ, this setting does not guarantee a five-minute upper limit.
+
+The cache can reduce response time for repeated requests for the same document version. It does not improve every request. A cache is not a backup.
+작성 메모: ASD-STE100 was used as a writing guide, adapted to this text. Compliance has not been verified.
+
+cache-ko / Korean
+캐시는 이미 계산한 결과를 저장합니다. 저장한 결과를 사용하면 같은 계산을 다시 하지 않을 수 있습니다.
+
+이 예시에서 캐시 키는 저장한 결과를 구별하는 기준이며, 문서 ID와 버전으로 구성됩니다. 문서 버전이 바뀌면 해당 캐시 키에 맞는 저장 결과를 찾지 못하는 캐시 미스가 발생합니다. 이는 원본 문서가 삭제됐다는 뜻은 아닙니다.
+
+서버의 버전 정보가 아직 동기화되지 않았다면 저장한 결과가 오래된 것일 수 있습니다. 만료 시간을 5분으로 설정하면 오래된 결과가 남는 시간을 줄일 수 있습니다. 다만 시스템 시계가 서로 다르면 이 설정으로 5분이라는 상한을 보장할 수 없습니다.
+
+같은 문서 버전을 반복해서 요청할 때는 캐시가 응답 시간을 줄일 수 있습니다. 모든 요청이 빨라지는 것은 아닙니다. 캐시는 백업이 아닙니다.
+작성 메모: STE의 명료성 원칙을 참고해 작성했습니다. 표준 준수 여부는 검증하지 않았습니다.
+
+essay-en / English
+The author prefers an interactive web page for learning about compound interest. The reader can change the annual interest rate and the duration on the page. This preference is a personal judgement. It is not based on a measured learning benefit.
+
+The author does not think that every explanation needs a web page. For a notice with conditions and exceptions, the author prefers prose that the reader can check sentence by sentence.
+
+A video can help a reader follow changes over time. But finding a specific detail can be difficult. These opinions do not show that one format is always better than the others.
+작성 메모: ASD-STE100 was used as a writing guide, adapted to this text. Compliance has not been verified.
+
+essay-ko / Korean
+저자는 복리를 배울 때 연이율과 기간을 바꿔 볼 수 있는 인터랙티브 웹을 선호합니다. 이 선호는 개인적인 판단이며, 학습 효과를 측정한 결과는 아닙니다.
+
+저자는 모든 설명에 웹이 필요하다고 생각하지 않습니다. 조건과 예외가 있는 공지는 독자가 문장마다 확인할 수 있는 글을 선호합니다.
+
+영상은 시간에 따른 변화를 따라가는 데 도움이 될 수 있습니다. 다만 특정 세부사항을 다시 찾기는 어려울 수 있습니다. 이러한 의견만으로 어느 형식이 언제나 다른 형식보다 낫다고 결론 내릴 수는 없습니다.
+작성 메모: STE의 명료성 원칙을 참고해 작성했습니다. 표준 준수 여부는 검증하지 않았습니다.

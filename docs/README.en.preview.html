@@ -20,7 +20,7 @@
   <a href="docs/README.en.preview.html#usage"><img src="assets/badges/modes.svg" alt="Explanation formats: 4"></a>
   <a href="docs/README.en.preview.html#how-it-works"><img src="assets/badges/language.svg" alt="Output languages: Korean / English"></a>
   <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 299 English words"></a>
+  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 308 English words"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="License: MIT"></a>
 </p>
 <p align="center">
@@ -33,6 +33,7 @@
 </code></pre>
 <h2 id="examples">Examples</h2>
 <p>We used this skill to explain the skill itself in four formats. The examples below are in English. Separate <a href="README.md#%EC%98%88%EC%8B%9C">Korean examples</a> are also available.</p>
+<p>The four-format examples below were produced with the earlier 299-word instruction body. The <a href="docs/prose-comparison.txt">prose comparison record</a> contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See <a href="kar-plain/SKILL.md">SKILL.md</a> for the current instructions.</p>
 <table>
 <thead>
 <tr>
@@ -127,11 +128,12 @@
 <pre><code class="language-text">$kar-plain diagram: Explain this process in Korean.
 </code></pre>
 <h2 id="how-it-works">How it works</h2>
-<p>The core instruction body contains 299 English words. When Codex selects the skill, it reads the full <code>SKILL.md</code> body and applies the requested format. <code>allow_implicit_invocation: false</code> keeps invocation explicit. <a href="https://learn.chatgpt.com/docs/build-skills">Official Codex guide</a>.</p>
-<p>Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. Prose uses ASD-STE100-inspired clarity while writing naturally in the selected language; it does not claim compliance with the standard.</p>
+<p>The core instruction body contains 308 English words. When Codex selects the skill, it reads the full <code>SKILL.md</code> body and applies the requested format. <code>allow_implicit_invocation: false</code> keeps invocation explicit. <a href="https://learn.chatgpt.com/docs/build-skills">Official Codex guide</a>.</p>
+<p>Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. English procedures and technical descriptions use ASD-STE100 as a writing reference. Korean and other English prose use STE-inspired clarity. Prose explains jargon, preserves claim strength and logical links, and separates procedural actions. It stays natural in the selected language without claiming verified compliance.</p>
 <p>Diagrams are checked for relationships and direction, web pages for their primary interaction, and videos for playback and scene timing. A request for a finished video requires a playable file. If required tools are unavailable, the skill identifies the blocker and labels partial results.</p>
 <h2 id="verified-scope">Verified scope</h2>
 <p>We checked the skill structure and produced separate Korean and English examples in all four formats. Web checks covered all four format buttons, language selection, topic editing, empty input and mobile layout. Both videos passed full-file decoding and browser playback checks.</p>
+<p>We compared 24 outputs in each of two prompt-blinded rounds. The first C was not selected; a revised C2 was compared with the unchanged A/B outputs before choosing the final directive. There are 32 distinct outputs in total. Review used separate agents for source fidelity and linguistic comparison, not a human comprehension study.</p>
 <p>These checks cover this production example. They do not establish explanation quality for other topics or compatibility with every environment. The READMEs were rendered and reviewed locally and on GitHub. <a href="docs/verification.md">Verification record</a>.</p>
 <h2 id="license">License</h2>
 <p><a href="LICENSE">MIT License</a> · Copyright (c) 2026 Burntgogi</p>
