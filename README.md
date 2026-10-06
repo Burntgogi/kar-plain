@@ -5,7 +5,7 @@
 <h1 align="center">Kar-plain<br>이해할 내용에 맞춰<br>설명 형식을 고릅니다.</h1>
 
 <p align="center">
-  글·도해·웹·영상으로 주제를 설명하는 Codex 스킬입니다.<br>
+  글·도해·웹·영상으로 주제를 설명하는 Claude Code·Codex 스킬입니다.<br>
   필요한 순간에 호출하고, 한국어나 영어로 결과물을 만드세요.
 </p>
 
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#설치"><img src="assets/badges/host.svg" alt="사용 환경: Codex"></a>
+  <a href="#설치"><img src="assets/badges/host.svg" alt="사용 환경: Codex · Claude"></a>
   <a href="#사용법"><img src="assets/badges/modes.svg" alt="설명 형식: 4가지"></a>
   <a href="#작동-원칙"><img src="assets/badges/language.svg" alt="출력 언어: 한국어 / 영어"></a>
   <a href="plugins/kar-plain/skills/kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="호출 정책: 명시적 호출"></a>
@@ -28,17 +28,17 @@
   <a href="#사용법">사용법</a> · <a href="#확인한-범위">확인한 범위</a>
 </p>
 
-설치 후 Codex에서 주제와 형식을 지정하세요.
+설치 후 Claude Code나 Codex에서 주제와 형식을 지정하세요. Codex에서는 `$kar-plain`으로 호출합니다.
 
 ```text
-$kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
+/kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 ```
 
 ## 예시
 
 이 스킬을 적용해 스킬 자체를 설명하는 글, 도해, 웹, 영상을 만들었습니다. 아래는 한국어 예시입니다. [영어 예시](README.en.md#examples)도 별도로 제공합니다.
 
-아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md)를 확인하세요.
+아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md)를 확인하세요. 예시 안의 호출문 표기는 수동 설치 기준입니다.
 
 | 형식 | 살펴볼 내용 | 결과물 |
 | --- | --- | --- |
@@ -73,18 +73,41 @@ $kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 
 ## 설치
 
-1. 저장소를 내려받아 압축을 풉니다.
-2. `kar-plain` 폴더를 Codex의 개인 스킬 디렉터리에 복사합니다. 현재 [공식 안내](https://learn.chatgpt.com/docs/build-skills)의 경로는 `~/.agents/skills`이며, Windows에서는 `%USERPROFILE%\.agents\skills`입니다.
-3. Codex에서 `$kar-plain`을 호출합니다. 새 스킬이 보이지 않으면 Codex를 다시 시작하세요.
+Claude Code와 Codex에서 모두 씁니다. 플러그인으로 설치하면 한 번의 명령으로 설치하고 갱신합니다.
+
+### Claude Code
+
+Claude Code 세션 안에서 실행하세요.
 
 ```text
-~/.agents/skills/
+/plugin marketplace add dovigod/kar-plain
+/plugin install kar-plain@kar-plain
+```
+
+설치 후 `/kar-plain:kar-plain`으로 호출합니다.
+
+### Codex
+
+```bash
+codex plugin marketplace add dovigod/kar-plain --ref main
+codex plugin add kar-plain@kar-plain
+```
+
+설치 후 `$kar-plain:kar-plain`으로 호출합니다.
+
+### 수동 설치
+
+저장소를 내려받아 `plugins/kar-plain/skills/kar-plain` 폴더를 개인 스킬 디렉터리에 복사합니다. 이 방식에서는 접두사 없이 `/kar-plain` 또는 `$kar-plain`으로 호출합니다.
+
+```text
+~/.claude/skills/     (Claude Code)
+~/.agents/skills/     (Codex, Windows는 %USERPROFILE%\.agents\skills)
 └── kar-plain/
     ├── SKILL.md
     └── agents/openai.yaml
 ```
 
-사용 중인 Codex가 별도 개인 스킬 경로를 제공한다면 그 경로를 사용하세요. 설치할 파일은 위 두 개입니다. README, 배너와 예시 결과물은 설치 폴더 밖에 둡니다.
+복사할 파일은 위 두 개입니다. README, 배너와 예시 결과물은 설치 폴더 밖에 둡니다. 사용 중인 클라이언트가 별도 개인 스킬 경로를 제공한다면 그 경로를 사용하세요. 새 스킬이 보이지 않으면 클라이언트를 다시 시작하세요.
 
 스킬 설치에는 별도 API 키나 Python이 필요하지 않습니다. 웹·영상 제작에 필요한 도구는 작업에 따라 달라집니다.
 
@@ -98,6 +121,8 @@ $kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 | 순서대로 시청하기 | `$kar-plain 영상: 이 과정의 변화를 한국어 자막이 있는 60초 영상으로 만들어 줘.` |
 | 형식 선택 맡기기 | `$kar-plain 자동: 다음 주제를 이해하기 쉽게 설명해 줘.` |
 
+표의 호출문은 수동 설치 기준입니다. 플러그인으로 설치했다면 스킬 이름 앞에 `kar-plain:`을 붙입니다 — `/kar-plain:kar-plain 글: …`.
+
 모드를 생략하면 요청에 맞는 형식 하나를 고릅니다. 여러 형식이 필요하면 함께 요청하세요. 출력 언어는 지정한 언어, 에이전트에 전달된 언어 선호, 현재 요청의 언어 순으로 고릅니다. 인용한 원문이 영어라는 이유로 영어를 선택하지 않습니다. 한국어로 요청하면서 영어 출력을 지정할 수도 있습니다. 음성 나레이션은 따로 요청하세요.
 
 ```text
@@ -106,7 +131,7 @@ $kar-plain 도해: 이 과정을 영어로 설명해 줘.
 
 ## 작동 원칙
 
-핵심 실행 본문은 영어 308단어입니다. Codex는 스킬을 선택하면 `SKILL.md` 본문 전체를 읽고 요청한 형식을 적용합니다. `allow_implicit_invocation: false`로 설정해 명시적으로 호출하도록 했습니다. [Codex 공식 안내](https://learn.chatgpt.com/docs/build-skills)
+핵심 실행 본문은 영어 308단어입니다. 두 호스트 모두 스킬을 선택하면 `SKILL.md` 본문 전체를 읽고 요청한 형식을 적용합니다. 명시적 호출 정책은 호스트별 설정 두 곳에 함께 적습니다 — Codex는 `allow_implicit_invocation: false`, Claude Code는 `disable-model-invocation: true`입니다. [Codex 공식 안내](https://learn.chatgpt.com/docs/build-skills) · [Claude Code 공식 안내](https://code.claude.com/docs/en/skills)
 
 형식이 달라져도 조건, 부정, 수치, 의무와 가능성의 차이를 보존합니다. 원자료의 사실과 추가한 예시·가정을 구별합니다. 영어 절차문과 기술 설명에는 ASD-STE100을 작성 기준으로 삼고, 한국어와 그 밖의 영어 글에는 STE-inspired clarity를 적용합니다. 전문용어를 풀고 주장 강도와 논리 연결을 보존하며, 절차의 행동을 분리합니다. 선택한 언어로 자연스럽게 쓰고 검증된 표준 준수를 주장하지 않습니다.
 

@@ -5,7 +5,7 @@
 <h1 align="center">Kar-plain<br>Choose the format that helps you understand.</h1>
 
 <p align="center">
-  A Codex skill for explaining topics through prose, diagrams, web pages and videos.<br>
+  A Claude Code and Codex skill for explaining topics through prose, diagrams, web pages and videos.<br>
   Invoke it when needed. Choose Korean or English output.
 </p>
 
@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="#installation"><img src="assets/badges/host.svg" alt="Host: Codex"></a>
+  <a href="#installation"><img src="assets/badges/host.svg" alt="Host: Codex · Claude"></a>
   <a href="#usage"><img src="assets/badges/modes.svg" alt="Explanation formats: 4"></a>
   <a href="#how-it-works"><img src="assets/badges/language.svg" alt="Output languages: Korean / English"></a>
   <a href="plugins/kar-plain/skills/kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
@@ -28,17 +28,17 @@
   <a href="#usage">Usage</a> · <a href="#verified-scope">Verified scope</a>
 </p>
 
-After installation, give Codex a topic and a format.
+After installation, give Claude Code or Codex a topic and a format. In Codex, invoke it as `$kar-plain`.
 
 ```text
-$kar-plain diagram: Explain how this skill works.
+/kar-plain diagram: Explain how this skill works.
 ```
 
 ## Examples
 
 We used this skill to explain the skill itself in four formats. The examples below are in English. Separate [Korean examples](README.md#예시) are also available.
 
-The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md) for the current instructions.
+The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md) for the current instructions. Invocations shown in the examples use the manual installation form.
 
 | Format | What to inspect | Artifact |
 | --- | --- | --- |
@@ -73,18 +73,41 @@ The image shows an 18-second excerpt. Download and play the [full 60-second MP4]
 
 ## Installation
 
-1. Download and extract the repository.
-2. Copy the `kar-plain` folder into your personal Codex skills directory. The current [official guide](https://learn.chatgpt.com/docs/build-skills) uses `~/.agents/skills`, or `%USERPROFILE%\.agents\skills` on Windows.
-3. Invoke `$kar-plain` in Codex. Restart Codex if the new skill does not appear.
+The skill runs in both Claude Code and Codex. Installing it as a plugin gives you one command to install and one to update.
+
+### Claude Code
+
+Run these commands inside a Claude Code session.
 
 ```text
-~/.agents/skills/
+/plugin marketplace add dovigod/kar-plain
+/plugin install kar-plain@kar-plain
+```
+
+Invoke it as `/kar-plain:kar-plain`.
+
+### Codex
+
+```bash
+codex plugin marketplace add dovigod/kar-plain --ref main
+codex plugin add kar-plain@kar-plain
+```
+
+Invoke it as `$kar-plain:kar-plain`.
+
+### Manual installation
+
+Download the repository and copy the `plugins/kar-plain/skills/kar-plain` folder into your personal skills directory. This method keeps the short form, `/kar-plain` or `$kar-plain`.
+
+```text
+~/.claude/skills/     (Claude Code)
+~/.agents/skills/     (Codex, or %USERPROFILE%\.agents\skills on Windows)
 └── kar-plain/
     ├── SKILL.md
     └── agents/openai.yaml
 ```
 
-If your Codex environment provides a different personal skills directory, use that location. Install the two files shown above. Keep the README, banner and example artifacts outside the installed skill folder.
+Install the two files shown above. Keep the README, banner and example artifacts outside the installed skill folder. If your client provides a different personal skills directory, use that location. Restart the client if the new skill does not appear.
 
 Installing the skill requires no separate API key or Python installation. Tools needed to produce web pages or videos depend on the task.
 
@@ -98,6 +121,8 @@ Installing the skill requires no separate API key or Python installation. Tools 
 | Watch a sequence | `$kar-plain video: Create a 60-second video of this process with English captions.` |
 | Let the skill choose | `$kar-plain auto: Explain the following topic clearly.` |
 
+The invocations above use the manual installation form. With the plugin installed, prefix the skill name with `kar-plain:`, for example `/kar-plain:kar-plain prose: ...`.
+
 Without a mode, the skill chooses one format suited to the request. Ask for multiple formats when you need them. Output language follows an explicit choice, then a known user language preference, then the current request. Quoted source language does not decide it. You can request Korean output in English. Ask for voice narration when you need it.
 
 ```text
@@ -106,7 +131,7 @@ $kar-plain diagram: Explain this process in Korean.
 
 ## How it works
 
-The core instruction body contains 308 English words. When Codex selects the skill, it reads the full `SKILL.md` body and applies the requested format. `allow_implicit_invocation: false` keeps invocation explicit. [Official Codex guide](https://learn.chatgpt.com/docs/build-skills).
+The core instruction body contains 308 English words. In both hosts, selecting the skill reads the full `SKILL.md` body and applies the requested format. The explicit-invocation policy is recorded in two host settings: `allow_implicit_invocation: false` for Codex and `disable-model-invocation: true` for Claude Code. [Official Codex guide](https://learn.chatgpt.com/docs/build-skills) · [Official Claude Code guide](https://code.claude.com/docs/en/skills).
 
 Every format preserves conditions, negation, quantities, obligations and uncertainty. Added examples and assumptions remain distinct from source facts. English procedures and technical descriptions use ASD-STE100 as a writing reference. Korean and other English prose use STE-inspired clarity. Prose explains jargon, preserves claim strength and logical links, and separates procedural actions. It stays natural in the selected language without claiming verified compliance.
 
