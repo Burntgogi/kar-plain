@@ -1,7 +1,7 @@
 ---
 name: kar-plain
 description: "Explain a topic in Korean or English through prose, a diagram, interactive web content, or an explainer video."
-argument-hint: "[글|도해|웹|영상|자동]: 설명할 주제"
+argument-hint: "[글|도해|웹|영상|자동 or prose|diagram|web|video|auto]: topic"
 disable-model-invocation: true
 ---
 

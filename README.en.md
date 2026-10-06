@@ -28,17 +28,17 @@
   <a href="#usage">Usage</a> · <a href="#verified-scope">Verified scope</a>
 </p>
 
-After installation, give Claude Code or Codex a topic and a format. In Codex, invoke it as `$kar-plain`.
+After installation, give Claude Code or Codex a topic and a format. The example below uses the Claude Code plugin installation. The prefix depends on how you install, so check the [invocation names](#invocation-names).
 
 ```text
-/kar-plain diagram: Explain how this skill works.
+/kar-plain:kar-plain diagram: Explain how this skill works.
 ```
 
 ## Examples
 
 We used this skill to explain the skill itself in four formats. The examples below are in English. Separate [Korean examples](README.md#예시) are also available.
 
-The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md) for the current instructions. Invocations shown in the examples use the manual installation form.
+The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md) for the current instructions. The examples were made for Codex, so their commands use the `$kar-plain` form.
 
 | Format | What to inspect | Artifact |
 | --- | --- | --- |
@@ -63,7 +63,7 @@ The four-format examples below were produced with the earlier 299-word instructi
 
 [![English web page with purpose buttons, an output language selector, a topic field and a Codex invocation](assets/web-preview.en.jpg)](outputs/en/index.html)
 
-Download `index.html` and open it in a browser. Changing the purpose, output language, or topic updates the suggested format and command. This example demonstrates format selection. Paste the displayed command into Codex to generate an explanation. The diagram and video are embedded in the HTML file.
+Download `index.html` and open it in a browser. Changing the purpose, output language, or topic updates the suggested format and command. This example demonstrates format selection. Paste the displayed command into Codex to generate an explanation. In Claude Code, change the prefix as shown in the [invocation names](#invocation-names). The diagram and video are embedded in the HTML file.
 
 ### Watch the video
 
@@ -73,45 +73,68 @@ The image shows an 18-second excerpt. Download and play the [full 60-second MP4]
 
 ## Installation
 
-The skill runs in both Claude Code and Codex. Installing it as a plugin gives you one command to install and one to update.
+The skill runs in both Claude Code and Codex. We recommend the plugin for Claude Code and manual installation for Codex.
 
 ### Claude Code
 
-Run these commands inside a Claude Code session.
+Run these commands inside a Claude Code session. They are the same on every operating system.
 
 ```text
 /plugin marketplace add Burntgogi/kar-plain
 /plugin install kar-plain@kar-plain
 ```
 
-Invoke it as `/kar-plain:kar-plain`.
+Get new versions from the `/plugin` menu or with `claude plugin update kar-plain@kar-plain` in a terminal. Restart Claude Code to apply them.
 
 ### Codex
+
+For Codex, we recommend [manual installation](#manual-installation), which keeps `$kar-plain`. Codex documents support for Claude-format marketplaces, but we have not yet tested the plugin installation below in Codex.
 
 ```bash
 codex plugin marketplace add Burntgogi/kar-plain --ref main
 codex plugin add kar-plain@kar-plain
 ```
 
-Invoke it as `$kar-plain:kar-plain`.
-
 ### Manual installation
 
-Download the repository and copy the `plugins/kar-plain/skills/kar-plain` folder into your personal skills directory. This method keeps the short form, `/kar-plain` or `$kar-plain`.
+Copy the `plugins/kar-plain/skills/kar-plain` folder into your personal skills directory. Install the two files shown below. Keep the README, banner and example artifacts outside the installed skill folder.
 
 ```text
-~/.claude/skills/     (Claude Code)
-~/.agents/skills/     (Codex, or %USERPROFILE%\.agents\skills on Windows)
-└── kar-plain/
-    ├── SKILL.md
-    └── agents/openai.yaml
+kar-plain/
+├── SKILL.md
+└── agents/openai.yaml
 ```
 
-Install the two files shown above. Keep the README, banner and example artifacts outside the installed skill folder. If your client provides a different personal skills directory, use that location. Restart the client if the new skill does not appear.
+macOS and Linux:
+
+```bash
+git clone https://github.com/Burntgogi/kar-plain.git
+mkdir -p ~/.claude/skills
+cp -R kar-plain/plugins/kar-plain/skills/kar-plain ~/.claude/skills/
+```
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/Burntgogi/kar-plain.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse kar-plain\plugins\kar-plain\skills\kar-plain "$env:USERPROFILE\.claude\skills\"
+```
+
+These commands install the skill for Claude Code. For Codex, replace `.claude/skills` or `.claude\skills` with `.agents/skills` or `.agents\skills`. If your client provides a different personal skills directory, use that location. Restart the client if the new skill does not appear.
+
+### Invocation names
+
+| Installation | Claude Code | Codex |
+| --- | --- | --- |
+| Plugin | `/kar-plain:kar-plain` | `$kar-plain:kar-plain` (untested) |
+| Manual | `/kar-plain` | `$kar-plain` |
 
 Installing the skill requires no separate API key or Python installation. Tools needed to produce web pages or videos depend on the task.
 
 ## Usage
+
+The invocations below use the Codex manual installation form. For other installations, replace `$kar-plain` with the matching entry in the [invocation names](#invocation-names). For example, the Claude Code plugin form is `/kar-plain:kar-plain prose: ...`.
 
 | Need | Example invocation |
 | --- | --- |
@@ -120,8 +143,6 @@ Installing the skill requires no separate API key or Python installation. Tools 
 | Explore by changing values | `$kar-plain web: Create an HTML explainer with adjustable interest rate and duration for compound interest.` |
 | Watch a sequence | `$kar-plain video: Create a 60-second video of this process with English captions.` |
 | Let the skill choose | `$kar-plain auto: Explain the following topic clearly.` |
-
-The invocations above use the manual installation form. With the plugin installed, prefix the skill name with `kar-plain:`, for example `/kar-plain:kar-plain prose: ...`.
 
 Without a mode, the skill chooses one format suited to the request. Ask for multiple formats when you need them. Output language follows an explicit choice, then a known user language preference, then the current request. Quoted source language does not decide it. You can request Korean output in English. Ask for voice narration when you need it.
 
@@ -139,7 +160,7 @@ Diagrams are checked for relationships and direction, web pages for their primar
 
 ## Verified scope
 
-We checked the skill structure and produced separate Korean and English examples in all four formats. Web checks covered all four format buttons, language selection, topic editing, empty input and mobile layout. Both videos passed full-file decoding and browser playback checks.
+We checked the skill structure and produced separate Korean and English examples in all four formats. Web checks covered all four format buttons, language selection, topic editing, empty input and mobile layout. Both videos passed full-file decoding and browser playback checks. In Claude Code, we confirmed plugin installation and explicit invocation. We have not yet tested plugin installation in Codex.
 
 We compared 24 outputs in each of two prompt-blinded rounds. The first C was not selected; a revised C2 was compared with the unchanged A/B outputs before choosing the final directive. There are 32 distinct outputs in total. Review used separate agents for source fidelity and linguistic comparison, not a human comprehension study.
 
@@ -151,7 +172,7 @@ These checks cover this production example. They do not establish explanation qu
 
 ## Sources and documents
 
-This skill was inspired by [Andrej Karpathy's original tweet](https://x.com/karpathy/status/2105819303471976479?s=20). It is an unofficial adaptation of his suggestion to help people understand through prose, diagrams, web pages and videos, applied to Korean and English Codex workflows.
+This skill was inspired by [Andrej Karpathy's original tweet](https://x.com/karpathy/status/2105819303471976479?s=20). It is an unofficial adaptation of his suggestion to help people understand through prose, diagrams, web pages and videos, applied to Korean and English Claude Code and Codex workflows.
 
 The banner, centered introduction, badges, language switch and example placement draw on [AI Slop Thresher](https://github.com/Burntgogi/ai-slop-thresher). The banner and documents were created for this repository.
 

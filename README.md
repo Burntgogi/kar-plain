@@ -28,17 +28,17 @@
   <a href="#사용법">사용법</a> · <a href="#확인한-범위">확인한 범위</a>
 </p>
 
-설치 후 Claude Code나 Codex에서 주제와 형식을 지정하세요. Codex에서는 `$kar-plain`으로 호출합니다.
+설치 후 Claude Code나 Codex에서 주제와 형식을 지정하세요. 아래는 Claude Code 플러그인 설치 기준입니다. 설치 방식에 따라 앞부분이 달라지므로 [호출 이름](#호출-이름)을 확인하세요.
 
 ```text
-/kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
+/kar-plain:kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 ```
 
 ## 예시
 
 이 스킬을 적용해 스킬 자체를 설명하는 글, 도해, 웹, 영상을 만들었습니다. 아래는 한국어 예시입니다. [영어 예시](README.en.md#examples)도 별도로 제공합니다.
 
-아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md)를 확인하세요. 예시 안의 호출문 표기는 수동 설치 기준입니다.
+아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md)를 확인하세요. 예시 결과물은 Codex용으로 제작해 호출문이 `$kar-plain` 형식입니다.
 
 | 형식 | 살펴볼 내용 | 결과물 |
 | --- | --- | --- |
@@ -63,7 +63,7 @@
 
 [![목적 버튼과 주제 입력에 따라 형식, 결과물과 호출문을 표시하는 웹 화면](assets/web-preview.jpg)](outputs/index.html)
 
-`index.html`을 내려받아 브라우저에서 여세요. 목적 버튼, 출력 언어와 주제 입력을 바꾸면 추천 형식과 호출문이 달라집니다. 이 페이지는 형식 선택을 체험하는 예시입니다. 실제 생성은 표시된 호출문을 Codex에 입력해 실행합니다. 도해와 영상도 HTML 안에 포함돼 있습니다.
+`index.html`을 내려받아 브라우저에서 여세요. 목적 버튼, 출력 언어와 주제 입력을 바꾸면 추천 형식과 호출문이 달라집니다. 이 페이지는 형식 선택을 체험하는 예시입니다. 실제 생성은 표시된 호출문을 Codex에 입력해 실행합니다. Claude Code에서는 앞부분을 [호출 이름](#호출-이름)에 맞게 바꾸세요. 도해와 영상도 HTML 안에 포함돼 있습니다.
 
 ### 영상으로 따라 보기
 
@@ -73,45 +73,68 @@
 
 ## 설치
 
-Claude Code와 Codex에서 모두 씁니다. 플러그인으로 설치하면 한 번의 명령으로 설치하고 갱신합니다.
+Claude Code와 Codex에서 모두 씁니다. Claude Code는 플러그인으로, Codex는 수동 설치로 쓰는 방법을 권장합니다.
 
 ### Claude Code
 
-Claude Code 세션 안에서 실행하세요.
+Claude Code 세션 안에서 실행하세요. 운영체제와 관계없이 같습니다.
 
 ```text
 /plugin marketplace add Burntgogi/kar-plain
 /plugin install kar-plain@kar-plain
 ```
 
-설치 후 `/kar-plain:kar-plain`으로 호출합니다.
+새 버전은 `/plugin` 메뉴나 터미널의 `claude plugin update kar-plain@kar-plain`으로 받습니다. 적용하려면 Claude Code를 다시 시작하세요.
 
 ### Codex
+
+Codex는 `$kar-plain`을 그대로 쓰는 [수동 설치](#수동-설치)를 권장합니다. Codex는 Claude 형식 마켓플레이스도 읽도록 안내하지만, 아래 플러그인 설치는 아직 실제 Codex에서 시험하지 않았습니다.
 
 ```bash
 codex plugin marketplace add Burntgogi/kar-plain --ref main
 codex plugin add kar-plain@kar-plain
 ```
 
-설치 후 `$kar-plain:kar-plain`으로 호출합니다.
-
 ### 수동 설치
 
-저장소를 내려받아 `plugins/kar-plain/skills/kar-plain` 폴더를 개인 스킬 디렉터리에 복사합니다. 이 방식에서는 접두사 없이 `/kar-plain` 또는 `$kar-plain`으로 호출합니다.
+`plugins/kar-plain/skills/kar-plain` 폴더를 개인 스킬 디렉터리에 복사합니다. 설치할 파일은 아래 두 개입니다. README, 배너와 예시 결과물은 설치 폴더 밖에 둡니다.
 
 ```text
-~/.claude/skills/     (Claude Code)
-~/.agents/skills/     (Codex, Windows는 %USERPROFILE%\.agents\skills)
-└── kar-plain/
-    ├── SKILL.md
-    └── agents/openai.yaml
+kar-plain/
+├── SKILL.md
+└── agents/openai.yaml
 ```
 
-복사할 파일은 위 두 개입니다. README, 배너와 예시 결과물은 설치 폴더 밖에 둡니다. 사용 중인 클라이언트가 별도 개인 스킬 경로를 제공한다면 그 경로를 사용하세요. 새 스킬이 보이지 않으면 클라이언트를 다시 시작하세요.
+macOS·Linux:
+
+```bash
+git clone https://github.com/Burntgogi/kar-plain.git
+mkdir -p ~/.claude/skills
+cp -R kar-plain/plugins/kar-plain/skills/kar-plain ~/.claude/skills/
+```
+
+Windows PowerShell:
+
+```powershell
+git clone https://github.com/Burntgogi/kar-plain.git
+New-Item -ItemType Directory -Force "$env:USERPROFILE\.claude\skills" | Out-Null
+Copy-Item -Recurse kar-plain\plugins\kar-plain\skills\kar-plain "$env:USERPROFILE\.claude\skills\"
+```
+
+위 명령은 Claude Code용입니다. Codex에서는 `.claude\skills`와 `.claude/skills`를 `.agents\skills`와 `.agents/skills`로 바꾸세요. 사용 중인 클라이언트가 별도 개인 스킬 경로를 제공한다면 그 경로를 사용하세요. 새 스킬이 보이지 않으면 클라이언트를 다시 시작하세요.
+
+### 호출 이름
+
+| 설치 방식 | Claude Code | Codex |
+| --- | --- | --- |
+| 플러그인 | `/kar-plain:kar-plain` | `$kar-plain:kar-plain` (미검증) |
+| 수동 설치 | `/kar-plain` | `$kar-plain` |
 
 스킬 설치에는 별도 API 키나 Python이 필요하지 않습니다. 웹·영상 제작에 필요한 도구는 작업에 따라 달라집니다.
 
 ## 사용법
+
+아래 호출문은 Codex 수동 설치 기준입니다. 다른 방식에서는 `$kar-plain`을 [호출 이름](#호출-이름)의 해당 칸으로 바꾸세요. 예를 들어 Claude Code 플러그인에서는 `/kar-plain:kar-plain 글: …`입니다.
 
 | 필요 | 호출 예시 |
 | --- | --- |
@@ -120,8 +143,6 @@ codex plugin add kar-plain@kar-plain
 | 값을 바꾸며 탐색하기 | `$kar-plain 웹: 복리 계산에서 금리와 기간을 바꿔 볼 수 있는 HTML을 만들어 줘.` |
 | 순서대로 시청하기 | `$kar-plain 영상: 이 과정의 변화를 한국어 자막이 있는 60초 영상으로 만들어 줘.` |
 | 형식 선택 맡기기 | `$kar-plain 자동: 다음 주제를 이해하기 쉽게 설명해 줘.` |
-
-표의 호출문은 수동 설치 기준입니다. 플러그인으로 설치했다면 스킬 이름 앞에 `kar-plain:`을 붙입니다 — `/kar-plain:kar-plain 글: …`.
 
 모드를 생략하면 요청에 맞는 형식 하나를 고릅니다. 여러 형식이 필요하면 함께 요청하세요. 출력 언어는 지정한 언어, 에이전트에 전달된 언어 선호, 현재 요청의 언어 순으로 고릅니다. 인용한 원문이 영어라는 이유로 영어를 선택하지 않습니다. 한국어로 요청하면서 영어 출력을 지정할 수도 있습니다. 음성 나레이션은 따로 요청하세요.
 
@@ -139,7 +160,7 @@ $kar-plain 도해: 이 과정을 영어로 설명해 줘.
 
 ## 확인한 범위
 
-스킬 파일 구조를 검사하고 한국어와 영어로 네 형식의 결과물을 각각 만들었습니다. 웹의 네 모드 전환, 출력 언어 선택, 주제 입력, 빈 입력 처리와 모바일 배치를 확인했습니다. 두 영상은 전체 파일 디코딩과 브라우저 재생을 확인했습니다.
+스킬 파일 구조를 검사하고 한국어와 영어로 네 형식의 결과물을 각각 만들었습니다. 웹의 네 모드 전환, 출력 언어 선택, 주제 입력, 빈 입력 처리와 모바일 배치를 확인했습니다. 두 영상은 전체 파일 디코딩과 브라우저 재생을 확인했습니다. Claude Code에서는 플러그인 설치와 명시적 호출을 확인했으며, Codex 플러그인 설치는 아직 확인하지 않았습니다.
 
 글 모드는 수정 전후 24개 결과를 두 차례 익명 비교했습니다. 첫 C는 채택하지 않았으며, 보강한 C2를 기존 A/B와 다시 비교해 최종 지침을 선택했습니다. 총 32개의 서로 다른 결과가 있고 A/B의 이전 결과는 그대로 보존했습니다. 평가는 독립 에이전트의 원문 대조와 언어학적 검토이며 인간 독자의 이해도 시험은 아닙니다.
 
@@ -151,7 +172,7 @@ $kar-plain 도해: 이 과정을 영어로 설명해 줘.
 
 ## 출처와 문서
 
-이 스킬은 [안드레이 카파시의 원문 트윗](https://x.com/karpathy/status/2105819303471976479?s=20)에서 영감을 받았습니다. 글, 도해, 웹과 영상으로 이해를 돕자는 제안을 한국어와 영어 Codex 작업에 적용한 비공식 구현입니다.
+이 스킬은 [안드레이 카파시의 원문 트윗](https://x.com/karpathy/status/2105819303471976479?s=20)에서 영감을 받았습니다. 글, 도해, 웹과 영상으로 이해를 돕자는 제안을 한국어와 영어 Claude Code·Codex 작업에 적용한 비공식 구현입니다.
 
 [AI Slop 탈곡기](https://github.com/Burntgogi/ai-slop-thresher)의 배너·가운데 정렬 소개·배지·언어 전환·예시 배치를 참고했습니다. 배너와 문서는 이 저장소용으로 새로 작성했습니다.
 
