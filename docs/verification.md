@@ -48,12 +48,9 @@ Chrome에서 한·영 웹의 버튼과 입력을 실제로 조작했다. 영어 
 | --- | --- |
 | 구조 | 정본은 `plugins/kar-plain/skills/kar-plain` 한 곳; `.claude/skills`와 `.agents/skills`는 그 정본을 가리키는 심링크이며 Git에 mode 120000으로 저장됨 |
 | 본문 보존 | `SKILL.md`의 frontmatter 아래 본문이 이동 전후 md5 일치(`dee973f7507299f966b4d9561847a70c`), 영문 308단어 유지 |
-| 호출 정책 | Claude의 `disable-model-invocation: true`와 Codex의 `allow_implicit_invocation: false`가 일치; `scripts/validate.rb`가 불일치를 오류로 처리 |
-| 검증 | `scripts/validate.sh` 통과 — 매니페스트 파싱, frontmatter 필드 화이트리스트, 심링크 무결성, `AGENTS.md` 심링크, 두 README의 스킬 링크 |
-| 검증 자체 시험 | 호출 정책을 일부러 어긋나게 하고 심링크를 지워 두 검사가 각각 종료 코드 1과 해당 오류 메시지를 내는 것을 확인한 뒤 원복 |
+| 호출 정책 | Claude의 `disable-model-invocation: true`와 Codex의 `allow_implicit_invocation: false`가 일치 |
 | README | 두 README의 상대 링크 각 33개와 이미지 각 10개 검사 통과, 본문 단어 수 동기화 확인 |
 | 배지 | `host.svg`를 `Codex · Claude`로 다시 그리고 XML 파싱과 기하값 확인; `invocation.svg`는 무수정 |
-| 줄바꿈 | 기존 파일의 CRLF 보존; 실행 스크립트 `validate.sh`·`validate.rb`는 shebang 때문에 LF |
 | 보존 자료 | `outputs/**`, 이 문서의 기존 절, `assets/badges/invocation.svg`는 바이트 단위로 무수정 |
 
-확인하지 않은 것: 실제 Claude Code와 Codex 클라이언트에 이 마켓플레이스를 등록해 설치하고 호출하는 시험은 수행하지 않았다. 구조와 메타데이터 검사만 통과한 상태다. GitHub Actions 워크플로도 아직 원격에서 실행하지 않았다.
+확인하지 않은 것: 실제 Claude Code와 Codex 클라이언트에 이 마켓플레이스를 등록해 설치하고 호출하는 시험은 수행하지 않았다. 구조와 메타데이터 검사만 통과한 상태다.
