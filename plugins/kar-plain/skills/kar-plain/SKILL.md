@@ -1,6 +1,8 @@
 ---
 name: kar-plain
 description: "Explain a topic in Korean or English through prose, a diagram, interactive web content, or an explainer video."
+argument-hint: "[글|도해|웹|영상|자동 or prose|diagram|web|video|auto]: topic"
+disable-model-invocation: true
 ---
 
 Inspired by Andrej Karpathy's [tweet](https://x.com/karpathy/status/2105819303471976479?s=20) supplied by the user; an unofficial adaptation.

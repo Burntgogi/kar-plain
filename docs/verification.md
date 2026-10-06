@@ -39,3 +39,23 @@ Chrome에서 한·영 웹의 버튼과 입력을 실제로 조작했다. 영어 
 수정한 두 README의 상대 링크는 각각 33개, 이미지는 각각 10개이며 링크·SVG·본문 크기 검사에 통과했다. 배포 대상 40개 파일, HTML에 포함된 자료와 미디어 메타데이터를 다시 검사했고 개인정보 패턴이 발견되지 않았다. 저장소 ZIP의 40개 항목과 설치·예시 ZIP의 19개 항목은 검사한 작업본과 바이트 단위로 일치한다. 개인 작업 기록은 ZIP과 Git 게시 대상에서 제외했다.
 
 이 실험은 각 조건·원문당 한 번 생성한 결과를 비교한다. A/B와 C의 실행 시점, 에이전트 맥락과 한국어 높임 표현을 모두 통제하지 않았다. 표준 사전의 단어·품사·의미를 전수 검증하지 않았으며, 사람의 독해 실험을 수행하지 않았다. 설치 구조와 한·영 언어 선택 정책, 글 이외의 모드는 유지했다.
+
+## 듀얼 호스트 플러그인 이식
+
+2026년 10월 7일 PR #1을 검토해 저장소를 Claude Code와 Codex가 함께 쓰는 플러그인 마켓플레이스 구조로 옮겼다. 스킬 본문은 그대로 두고 배치와 메타데이터만 바꿨다. 플러그인에는 `plugin.json`, `SKILL.md`, `agents/openai.yaml`만 있으며 hooks, MCP 서버, 에이전트, 실행 파일은 없다.
+
+| 대상 | 확인 내용 |
+| --- | --- |
+| 구조 | 스킬 파일은 `plugins/kar-plain/skills/kar-plain` 한 곳에 둔다. 저장소 안의 로컬 스킬 심링크는 두지 않는다. Windows Git의 기본값 `core.symlinks=false`에서 경로 문자열 파일로 바뀌기 때문이다 |
+| 본문 보존 | `SKILL.md`의 frontmatter 아래 본문은 이동 전과 같고 영문 308단어다. frontmatter에 `argument-hint`와 `disable-model-invocation: true`를 추가했다 |
+| 매니페스트 | Claude Code 2.1.287의 `claude plugin validate`가 마켓플레이스와 플러그인 매니페스트를 모두 통과시켰다 |
+| Claude Code 설치 | 별도 설정 디렉터리에서 마켓플레이스 등록과 설치에 성공했다. 구성은 스킬 1개, hooks·MCP·에이전트 0개다 |
+| Claude Code 호출 | 모델은 사용 가능한 스킬 목록에서 `kar-plain`을 보지 못했다. `/kar-plain:kar-plain 글: …`로 호출하면 한국어 글을 만들었다. CRLF로 저장한 `SKILL.md` 그대로 확인했다 |
+| 호출 정책 | `render_readme.py`가 Claude의 `disable-model-invocation: true`와 Codex의 `allow_implicit_invocation: false`가 함께 바뀌었는지 검사한다 |
+| README | 두 README의 상대 링크 각 33개와 이미지 각 10개가 검사를 통과했다. 링크는 파일 이름의 대소문자까지 비교한다. Windows와 macOS는 대소문자가 달라도 파일을 찾지만 GitHub와 Linux는 찾지 못한다 |
+| 줄바꿈 | 미리보기 HTML은 운영체제와 관계없이 CRLF로 쓴다. 기존 텍스트 파일의 줄바꿈은 바꾸지 않았다 |
+| 보존 자료 | `outputs/**`와 이 문서의 기존 절은 바꾸지 않았다 |
+
+확인하지 않은 것: Codex에서 플러그인을 설치하고 `$kar-plain:kar-plain`으로 호출하는 시험은 하지 않았다. Codex 문서는 `.claude-plugin/marketplace.json`과 Claude 형식 매니페스트를 읽는다고 안내하지만, README는 이 경로를 미검증으로 표시하고 Codex에는 수동 설치를 권장한다. macOS와 Linux 실기기 시험은 하지 않았다. 다만 저장소의 파일 바이트와 Claude Code의 파서는 운영체제와 관계없이 같다.
+
+플러그인을 고쳐 배포할 때는 `plugins/kar-plain/.claude-plugin/plugin.json`의 `version`을 올린다. 버전이 같으면 Claude Code는 업데이트를 받지 않는다.

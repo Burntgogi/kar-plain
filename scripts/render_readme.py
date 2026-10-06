@@ -1,9 +1,10 @@
-"""Render both READMEs for local review and check their repository links."""
+"""Render both READMEs for local review and check their links and skill metadata."""
 from pathlib import Path
 from html import escape
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import json
+import os
 import re
 import xml.etree.ElementTree as ET
 from markdown_it import MarkdownIt
@@ -11,6 +12,7 @@ from markdown_it import MarkdownIt
 ROOT = Path(__file__).resolve().parents[1]
 PARSER = MarkdownIt("commonmark", {"html": True}).enable("table")
 PREVIEWS = {"README.md": "docs/README.preview.html", "README.en.md": "docs/README.en.preview.html"}
+SKILL_DIR = ROOT / "plugins/kar-plain/skills/kar-plain"
 
 class Links(HTMLParser):
     def __init__(self):
@@ -30,6 +32,15 @@ class Links(HTMLParser):
         if tag == "img":
             self.images += 1
             assert values.get("alt"), "Image missing alternative text"
+
+def exact_case(path):
+    """Windows and macOS ignore case, but GitHub and Linux do not."""
+    current = ROOT
+    for part in path.relative_to(ROOT).parts:
+        if part not in {child.name for child in current.iterdir()}:
+            return False
+        current = current / part
+    return True
 
 def slug(text):
     text = re.sub(r"<[^>]+>", "", text).lower()
@@ -69,6 +80,7 @@ for name, preview in PREVIEWS.items():
             path = (ROOT / unquote(parts.path)).resolve()
             assert path.is_relative_to(ROOT), f"Link outside repository: {target}"
             assert path.exists(), f"Missing repository link: {target}"
+            assert exact_case(Path(os.path.normpath(ROOT / unquote(parts.path)))), f"Link case differs from file: {target}"
             local_count += 1
         elif parts.fragment:
             assert unquote(parts.fragment) in links.anchors, f"Missing anchor: {target}"
@@ -78,16 +90,22 @@ for name, preview in PREVIEWS.items():
     lang = "ko" if name == "README.md" else "en"
     note = "한국어 README · 로컬 렌더링 미리보기" if lang == "ko" else "English README · Local rendering preview"
     document = f'<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="../"><title>{escape(note)}</title><style>{STYLE}</style></head><body><div class="preview-note">{escape(note)}</div><article class="markdown-body">{rendered}</article></body></html>'
-    (ROOT / preview).write_text(document, encoding="utf-8")
+    (ROOT / preview).write_text(document, encoding="utf-8", newline="\r\n")
     results.append({"source": name, "preview": preview, "local_links": local_count, "images": links.images, "bytes": source.stat().st_size})
 
 for path in (ROOT / "assets").rglob("*.svg"):
     ET.parse(path)
-skill = (ROOT / "kar-plain/SKILL.md").read_text(encoding="utf-8")
+skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
 body = skill.split("---", 2)[2].strip()
 body_words = len(body.split())
 assert body_words < 350, 'Keep the shared skill concise'
-assert len(list((ROOT / "kar-plain").rglob("*.*"))) == 2
+assert len(list(SKILL_DIR.rglob("*.*"))) == 2
+claude_explicit = "disable-model-invocation: true" in skill.split("---", 2)[1]
+codex_explicit = "allow_implicit_invocation: false" in (SKILL_DIR / "agents/openai.yaml").read_text(encoding="utf-8")
+assert claude_explicit == codex_explicit, "Claude and Codex invocation policies differ"
+plugin = json.loads((ROOT / "plugins/kar-plain/.claude-plugin/plugin.json").read_text(encoding="utf-8"))
+marketplace = json.loads((ROOT / ".claude-plugin/marketplace.json").read_text(encoding="utf-8"))
+assert [(entry["name"], entry["source"]) for entry in marketplace["plugins"]] == [(plugin["name"], "./plugins/kar-plain")]
 for name in PREVIEWS:
     assert str(body_words) in (ROOT / name).read_text(encoding="utf-8"), "README word count is stale"
 print(json.dumps({"readmes": results, "links": "PASS", "SVG": "PASS", "skill_body_words": body_words}, ensure_ascii=False))
