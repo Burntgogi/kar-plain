@@ -80,7 +80,7 @@ The skill runs in both Claude Code and Codex. Installing it as a plugin gives yo
 Run these commands inside a Claude Code session.
 
 ```text
-/plugin marketplace add dovigod/kar-plain
+/plugin marketplace add Burntgogi/kar-plain
 /plugin install kar-plain@kar-plain
 ```
 
@@ -89,7 +89,7 @@ Invoke it as `/kar-plain:kar-plain`.
 ### Codex
 
 ```bash
-codex plugin marketplace add dovigod/kar-plain --ref main
+codex plugin marketplace add Burntgogi/kar-plain --ref main
 codex plugin add kar-plain@kar-plain
 ```
 

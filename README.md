@@ -80,7 +80,7 @@ Claude Code와 Codex에서 모두 씁니다. 플러그인으로 설치하면 한
 Claude Code 세션 안에서 실행하세요.
 
 ```text
-/plugin marketplace add dovigod/kar-plain
+/plugin marketplace add Burntgogi/kar-plain
 /plugin install kar-plain@kar-plain
 ```
 
@@ -89,7 +89,7 @@ Claude Code 세션 안에서 실행하세요.
 ### Codex
 
 ```bash
-codex plugin marketplace add dovigod/kar-plain --ref main
+codex plugin marketplace add Burntgogi/kar-plain --ref main
 codex plugin add kar-plain@kar-plain
 ```
 
