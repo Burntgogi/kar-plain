@@ -28,6 +28,8 @@
   바꾸지 않는다.
 - 실행 스크립트(`scripts/*.sh`, `scripts/*.rb`)는 LF 로 쓴다. shebang 줄에
   `\r` 이 붙으면 인터프리터를 찾지 못한다.
+- `.gitattributes` 의 `* whitespace=cr-at-eol` 은 `git diff --check` 가 CR 을
+  trailing whitespace 로 신고하지 않게 한다. 파일 저장 방식은 바꾸지 않는다.
 
 ## 보존 대상
 
