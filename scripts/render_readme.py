@@ -11,6 +11,7 @@ from markdown_it import MarkdownIt
 ROOT = Path(__file__).resolve().parents[1]
 PARSER = MarkdownIt("commonmark", {"html": True}).enable("table")
 PREVIEWS = {"README.md": "docs/README.preview.html", "README.en.md": "docs/README.en.preview.html"}
+SKILL_DIR = ROOT / "plugins/kar-plain/skills/kar-plain"
 
 class Links(HTMLParser):
     def __init__(self):
@@ -83,11 +84,11 @@ for name, preview in PREVIEWS.items():
 
 for path in (ROOT / "assets").rglob("*.svg"):
     ET.parse(path)
-skill = (ROOT / "kar-plain/SKILL.md").read_text(encoding="utf-8")
+skill = (SKILL_DIR / "SKILL.md").read_text(encoding="utf-8")
 body = skill.split("---", 2)[2].strip()
 body_words = len(body.split())
 assert body_words < 350, 'Keep the shared skill concise'
-assert len(list((ROOT / "kar-plain").rglob("*.*"))) == 2
+assert len(list(SKILL_DIR.rglob("*.*"))) == 2
 for name in PREVIEWS:
     assert str(body_words) in (ROOT / name).read_text(encoding="utf-8"), "README word count is stale"
 print(json.dumps({"readmes": results, "links": "PASS", "SVG": "PASS", "skill_body_words": body_words}, ensure_ascii=False))

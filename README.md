@@ -17,8 +17,8 @@
   <a href="#설치"><img src="assets/badges/host.svg" alt="사용 환경: Codex"></a>
   <a href="#사용법"><img src="assets/badges/modes.svg" alt="설명 형식: 4가지"></a>
   <a href="#작동-원칙"><img src="assets/badges/language.svg" alt="출력 언어: 한국어 / 영어"></a>
-  <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="호출 정책: 명시적 호출"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="실행 본문: 영어 308단어"></a>
+  <a href="plugins/kar-plain/skills/kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="호출 정책: 명시적 호출"></a>
+  <a href="plugins/kar-plain/skills/kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="실행 본문: 영어 308단어"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="라이선스: MIT"></a>
 </p>
 
@@ -38,7 +38,7 @@ $kar-plain 도해: 이 스킬의 작동 과정을 설명해 줘.
 
 이 스킬을 적용해 스킬 자체를 설명하는 글, 도해, 웹, 영상을 만들었습니다. 아래는 한국어 예시입니다. [영어 예시](README.en.md#examples)도 별도로 제공합니다.
 
-아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](kar-plain/SKILL.md)를 확인하세요.
+아래 네 형식 예시는 299단어 본문으로 제작한 초기 자료입니다. 글 모드 수정 전후의 A/B/C 결과와 분석은 [비교 기록](docs/prose-comparison.txt)에 있습니다. 현재 지침은 [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md)를 확인하세요.
 
 | 형식 | 살펴볼 내용 | 결과물 |
 | --- | --- | --- |
@@ -130,4 +130,4 @@ $kar-plain 도해: 이 과정을 영어로 설명해 줘.
 
 [AI Slop 탈곡기](https://github.com/Burntgogi/ai-slop-thresher)의 배너·가운데 정렬 소개·배지·언어 전환·예시 배치를 참고했습니다. 배너와 문서는 이 저장소용으로 새로 작성했습니다.
 
-[스킬 지침](kar-plain/SKILL.md) · [호출 설정](kar-plain/agents/openai.yaml) · [README 설계와 참고 자료](docs/readme-design.md)
+[스킬 지침](plugins/kar-plain/skills/kar-plain/SKILL.md) · [호출 설정](plugins/kar-plain/skills/kar-plain/agents/openai.yaml) · [README 설계와 참고 자료](docs/readme-design.md)

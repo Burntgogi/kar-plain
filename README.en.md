@@ -17,8 +17,8 @@
   <a href="#installation"><img src="assets/badges/host.svg" alt="Host: Codex"></a>
   <a href="#usage"><img src="assets/badges/modes.svg" alt="Explanation formats: 4"></a>
   <a href="#how-it-works"><img src="assets/badges/language.svg" alt="Output languages: Korean / English"></a>
-  <a href="kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
-  <a href="kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 308 English words"></a>
+  <a href="plugins/kar-plain/skills/kar-plain/agents/openai.yaml"><img src="assets/badges/invocation.svg" alt="Invocation: explicit"></a>
+  <a href="plugins/kar-plain/skills/kar-plain/SKILL.md"><img src="assets/badges/body.svg" alt="Instruction body: 308 English words"></a>
   <a href="LICENSE"><img src="assets/badges/license.svg" alt="License: MIT"></a>
 </p>
 
@@ -38,7 +38,7 @@ $kar-plain diagram: Explain how this skill works.
 
 We used this skill to explain the skill itself in four formats. The examples below are in English. Separate [Korean examples](README.md#예시) are also available.
 
-The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](kar-plain/SKILL.md) for the current instructions.
+The four-format examples below were produced with the earlier 299-word instruction body. The [prose comparison record](docs/prose-comparison.txt) contains the A/B/C results and analysis in Korean, with unchanged Korean and English samples. See [SKILL.md](plugins/kar-plain/skills/kar-plain/SKILL.md) for the current instructions.
 
 | Format | What to inspect | Artifact |
 | --- | --- | --- |
@@ -130,4 +130,4 @@ This skill was inspired by [Andrej Karpathy's original tweet](https://x.com/karp
 
 The banner, centered introduction, badges, language switch and example placement draw on [AI Slop Thresher](https://github.com/Burntgogi/ai-slop-thresher). The banner and documents were created for this repository.
 
-[Skill instructions](kar-plain/SKILL.md) · [Invocation settings](kar-plain/agents/openai.yaml) · [README design and references](docs/readme-design.md)
+[Skill instructions](plugins/kar-plain/skills/kar-plain/SKILL.md) · [Invocation settings](plugins/kar-plain/skills/kar-plain/agents/openai.yaml) · [README design and references](docs/readme-design.md)
